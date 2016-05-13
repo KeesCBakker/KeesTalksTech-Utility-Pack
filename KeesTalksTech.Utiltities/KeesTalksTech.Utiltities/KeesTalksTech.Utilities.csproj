@@ -42,12 +42,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Compilation\CachedResultCompiler.cs" />
+    <Compile Include="Compilation\CodeDom\CodeDomCompiler.cs" />
+    <Compile Include="Compilation\CodeDom\CodeDomCompilerException.cs" />
+    <Compile Include="Compilation\CodeDom\CodeDomCompilerTest.cs" />
     <Compile Include="Compilation\CompilerExtensions.cs" />
     <Compile Include="Compilation\CompilerInstructions.cs" />
     <Compile Include="Compilation\ICompiler.cs" />
     <Compile Include="Compilation\ICompilerInstructions.cs" />
     <Compile Include="Compilation\IProducer.cs" />
     <Compile Include="Compilation\IScript.cs" />
+    <Compile Include="Evaluation\Evaluator.cs" />
+    <Compile Include="Evaluation\EvaluatorExtensions.cs" />
+    <Compile Include="Evaluation\EvaluatorGenericT.cs" />
+    <Compile Include="Evaluation\EvaluatorGenericTTest.cs" />
+    <Compile Include="Evaluation\EvaluatorTest.cs" />
+    <Compile Include="Evaluation\IEvaluator.cs" />
     <Compile Include="Hashing\BlockHasher.cs" />
     <Compile Include="Hashing\BlockHasherTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -55,6 +64,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
