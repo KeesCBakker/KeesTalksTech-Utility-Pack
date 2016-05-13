@@ -30,26 +30,30 @@ namespace KeesTalksTech.Utilities.Compilation
 		/// <summary>
 		/// Compiles the specified code the sepcified assembly locations.
 		/// </summary>
-		/// <param name="assemblyLocations">The assembly locations.</param>
 		/// <param name="code">The code.</param>
-		/// <returns>The assembly.</returns>
-		public Assembly Compile(string[] assemblyLocations, string code)
+		/// <param name="assemblyLocations">The assembly locations.</param>
+		/// <returns>
+		/// The assembly.
+		/// </returns>
+		public Assembly Compile(string code, params string[] assemblyLocations)
 		{
-			string key = GetCacheKey(assemblyLocations, code);
+			string key = GetCacheKey(code, assemblyLocations);
 
 			return cache.GetOrAdd(key, (k) =>
 			{
-				return compiler.Compile(assemblyLocations, code);
+				return compiler.Compile(code, assemblyLocations);
 			});
 		}
 
 		/// <summary>
 		/// Gets the cache key.
 		/// </summary>
-		/// <param name="assemblyLocations">The assembly locations.</param>
 		/// <param name="code">The code.</param>
-		/// <returns>The key.</returns>
-		private string GetCacheKey(string[] assemblyLocations, string code)
+		/// <param name="assemblyLocations">The assembly locations.</param>
+		/// <returns>
+		/// The key.
+		/// </returns>
+		private string GetCacheKey(string code, string[] assemblyLocations)
 		{
 			string key = String.Join("|", code, assemblyLocations);
 			return key;

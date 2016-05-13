@@ -7,9 +7,9 @@ namespace KeesTalksTech.Utilities.Compilation
 		/// <summary>
 		/// Compiles the specified code the sepcified assembly locations.
 		/// </summary>
-		/// <param name="assemblyLocations">The assembly locations.</param>
 		/// <param name="code">The code.</param>
+		/// <param name="assemblyLocations">The assembly locations.</param>
 		/// <returns>The assembly.</returns>
-		Assembly Compile(string[] assemblyLocations, string code);
+		Assembly Compile(string code, params string[] assemblyLocations);
 	}
 }

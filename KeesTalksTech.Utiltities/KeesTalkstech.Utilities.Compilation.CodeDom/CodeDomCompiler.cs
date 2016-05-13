@@ -18,10 +18,13 @@ namespace KeesTalkstech.Utilities.Compilation.CodeDom
 		/// <summary>
 		/// Compiles the specified code the sepcified assembly locations.
 		/// </summary>
-		/// <param name="assemblyLocations">The assembly locations.</param>
 		/// <param name="code">The code.</param>
-		/// <returns></returns>
-		public Assembly Compile(string[] assemblyLocations, string code)
+		/// <param name="assemblyLocations">The assembly locations.</param>
+		/// <returns>
+		/// The assembly.
+		/// </returns>
+		/// <exception cref="KeesTalkstech.Utilities.Compilation.CodeDom.CodeDomCompilerException">Assembly could not be created.</exception>
+		public Assembly Compile(string code, params string[] assemblyLocations)
 		{
 			var parameters = new CompilerParameters();
 			parameters.GenerateExecutable = false;

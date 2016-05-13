@@ -29,11 +29,13 @@ namespace KeesTalksTech.Utilities.Compilation.Roslyn
 		/// <summary>
 		/// Compiles the specified code the sepcified assembly locations.
 		/// </summary>
-		/// <param name="assemblyLocations">The assembly locations.</param>
 		/// <param name="code">The code.</param>
-		/// <returns>The assembly.</returns>
+		/// <param name="assemblyLocations">The assembly locations.</param>
+		/// <returns>
+		/// The assembly.
+		/// </returns>
 		/// <exception cref="KeesTalksTech.Utilities.Compilation.Roslyn.RoslynCompilationException">Assembly could not be created.</exception>
-		public Assembly Compile(string[] assemblyLocations, string code)
+		public Assembly Compile(string code, params string[] assemblyLocations)
 		{
 			var references = assemblyLocations.Select(l => MetadataReference.CreateFromFile(l));
 

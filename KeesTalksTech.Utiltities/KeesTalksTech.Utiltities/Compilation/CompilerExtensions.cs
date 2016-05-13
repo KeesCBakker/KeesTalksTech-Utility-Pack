@@ -18,7 +18,7 @@ namespace KeesTalksTech.Utilities.Compilation
 		/// <returns></returns>
 		public static object CompileAndCreateObject(this ICompiler compiler, ICompilerInstructions instructions, params object[] constructorParameters)
 		{
-			var assembly = compiler.Compile(instructions.AssemblyLocations, instructions.Code);
+			var assembly = compiler.Compile(instructions.Code, instructions.AssemblyLocations);
 
 			var type = assembly.GetType(instructions.ClassName);
 
