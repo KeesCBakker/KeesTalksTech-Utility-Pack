@@ -113,7 +113,7 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KeesTalksTech.Utiltities\KeesTalksTech.Utilities.csproj">
+    <ProjectReference Include="..\KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj">
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>
       <Name>KeesTalksTech.Utilities</Name>
     </ProjectReference>
