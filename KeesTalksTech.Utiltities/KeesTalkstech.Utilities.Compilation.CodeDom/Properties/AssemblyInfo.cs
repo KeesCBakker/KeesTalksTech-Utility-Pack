@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KeesTalksTech Utilities")]
-[assembly: AssemblyDescription("Utility package with useful and less useful buidling block.")]
+[assembly: AssemblyTitle("KeesTalkstech - CodeDom Compiler")]
+[assembly: AssemblyDescription("Implements the ICompiler as a CSharp CodeDom compiler.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KeesTalksTech")]
-[assembly: AssemblyProduct("KeesTalksTech.Utilities")]
+[assembly: AssemblyProduct("KeesTalkstech.Utilities.Compilation.CodeDom")]
 [assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b4831004-64d0-4137-b289-70cec983a035")]
+[assembly: Guid("6f07db94-ff73-428b-a6a4-9715a36608c2")]
 
 // Version information for an assembly consists of the following four values:
 //

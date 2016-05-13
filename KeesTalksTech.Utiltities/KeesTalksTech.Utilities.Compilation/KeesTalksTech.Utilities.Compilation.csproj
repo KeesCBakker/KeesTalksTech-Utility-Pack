@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4831004-64D0-4137-B289-70CEC983A035}</ProjectGuid>
+    <ProjectGuid>{D17209D6-131E-4A1F-A4AB-CB536154B12A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KeesTalksTech.Utiltities</RootNamespace>
-    <AssemblyName>KeesTalksTech.Utiltities</AssemblyName>
+    <RootNamespace>KeesTalksTech.Utilities.Compilation</RootNamespace>
+    <AssemblyName>KeesTalksTech.Utilities.Compilation</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,7 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,12 +40,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Hashing\BlockHasher.cs" />
-    <Compile Include="Hashing\BlockHasherTest.cs" />
+    <Compile Include="CachedResultCompiler.cs" />
+    <Compile Include="CompilerExtensions.cs" />
+    <Compile Include="CompilerInstructions.cs" />
+    <Compile Include="ICompiler.cs" />
+    <Compile Include="ICompilerInstructions.cs" />
+    <Compile Include="IProducer.cs" />
+    <Compile Include="IScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

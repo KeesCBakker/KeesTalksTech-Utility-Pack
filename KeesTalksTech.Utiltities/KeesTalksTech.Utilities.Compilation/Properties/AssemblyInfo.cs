@@ -1,15 +1,16 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KeesTalksTech Utilities")]
-[assembly: AssemblyDescription("Utility package with useful and less useful buidling block.")]
+[assembly: AssemblyTitle("KeesTalksTech.Utilities.Compilation")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("KeesTalksTech")]
-[assembly: AssemblyProduct("KeesTalksTech.Utilities")]
-[assembly: AssemblyCopyright("Copyright © 2016")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("KeesTalksTech.Utilities.Compilation")]
+[assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b4831004-64d0-4137-b289-70cec983a035")]
+[assembly: Guid("d17209d6-131e-4a1f-a4ab-cb536154b12a")]
 
 // Version information for an assembly consists of the following four values:
 //

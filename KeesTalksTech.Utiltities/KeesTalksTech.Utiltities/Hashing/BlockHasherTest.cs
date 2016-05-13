@@ -1,5 +1,5 @@
 ﻿#if (DEBUG)
-namespace KeesTalksTech.Utiltities.Hashing
+namespace KeesTalksTech.Utilities.Hashing
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System.IO;

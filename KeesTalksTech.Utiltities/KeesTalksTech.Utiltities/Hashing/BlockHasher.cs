@@ -1,4 +1,4 @@
-﻿namespace KeesTalksTech.Utiltities.Hashing
+﻿namespace KeesTalksTech.Utilities.Hashing
 {
 	/* The MIT License (MIT)
 	 *
