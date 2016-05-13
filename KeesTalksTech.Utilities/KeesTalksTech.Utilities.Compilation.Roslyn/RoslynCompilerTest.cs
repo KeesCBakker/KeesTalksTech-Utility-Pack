@@ -1,9 +1,9 @@
 ﻿#if (DEBUG)
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-
 namespace KeesTalksTech.Utilities.Compilation.Roslyn
 {
+	using Microsoft.VisualStudio.TestTools.UnitTesting;
+	using System;
+
 	[TestClass]
 	public class RoslynCompilerTest
 	{

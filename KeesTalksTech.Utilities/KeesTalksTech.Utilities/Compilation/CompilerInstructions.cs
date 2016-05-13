@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace KeesTalksTech.Utilities.Compilation
+﻿namespace KeesTalksTech.Utilities.Compilation
 {
+	using System.Collections.Generic;
+
 	/// <summary>
 	/// Instructions that are used to compiler a piece of code. Used by the extension methods.
 	/// </summary>

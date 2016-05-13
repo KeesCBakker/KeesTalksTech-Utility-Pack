@@ -1,8 +1,8 @@
-﻿using System;
-using System.CodeDom.Compiler;
-
-namespace KeesTalkstech.Utilities.Compilation.CodeDom
+﻿namespace KeesTalkstech.Utilities.Compilation.CodeDom
 {
+	using System;
+	using System.CodeDom.Compiler;
+
 	/// <summary>
 	/// Object that stores the compilation exception for the Roslyn compiler.
 	/// </summary>

@@ -1,7 +1,7 @@
-﻿using System.Reflection;
-	
-namespace KeesTalksTech.Utilities.Compilation
+﻿namespace KeesTalksTech.Utilities.Compilation
 {
+	using System.Reflection;
+
 	public interface ICompiler
 	{
 		/// <summary>

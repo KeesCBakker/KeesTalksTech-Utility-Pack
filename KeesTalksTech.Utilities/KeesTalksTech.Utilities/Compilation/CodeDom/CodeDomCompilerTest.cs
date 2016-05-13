@@ -1,10 +1,10 @@
 ﻿#if (DEBUG)
-using KeesTalksTech.Utilities.Compilation;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-
 namespace KeesTalkstech.Utilities.Compilation.CodeDom
 {
+	using KeesTalksTech.Utilities.Compilation;
+	using Microsoft.VisualStudio.TestTools.UnitTesting;
+	using System;
+
 	[TestClass]
 	public class CodeDomCompilerTest
 	{

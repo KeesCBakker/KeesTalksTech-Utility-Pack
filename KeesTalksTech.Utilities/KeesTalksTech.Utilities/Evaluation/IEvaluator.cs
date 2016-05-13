@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using KeesTalksTech.Utilities.Compilation;
-
-namespace KeesTalksTech.Utiltities.Evaluation
+﻿namespace KeesTalksTech.Utiltities.Evaluation
 {
+	using KeesTalksTech.Utilities.Compilation;
+	using System.Collections.Generic;
+
 	/// <summary>
 	/// Indicates the object implements an evaluator that helps with the creation and compilation of code.
 	/// </summary>

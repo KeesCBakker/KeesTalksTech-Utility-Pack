@@ -1,7 +1,7 @@
-﻿using KeesTalksTech.Utilities.Compilation;
-
-namespace KeesTalksTech.Utiltities.Evaluation
+﻿namespace KeesTalksTech.Utiltities.Evaluation
 {
+	using KeesTalksTech.Utilities.Compilation;
+
 	/// <summary>
 	/// Evaluator that will generate sripts with a certain base type.
 	/// </summary>

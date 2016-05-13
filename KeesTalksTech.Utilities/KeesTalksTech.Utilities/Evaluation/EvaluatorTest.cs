@@ -1,9 +1,9 @@
-﻿using KeesTalkstech.Utilities.Compilation.CodeDom;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Text;
-#if (DEBUG)
+﻿#if (DEBUG)
 namespace KeesTalksTech.Utiltities.Evaluation
 {
+	using KeesTalkstech.Utilities.Compilation.CodeDom;
+	using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 	[TestClass]
 	public class EvaluatorTest
 	{

@@ -1,7 +1,7 @@
-﻿using System;
-
-namespace KeesTalksTech.Utiltities.Evaluation
+﻿namespace KeesTalksTech.Utiltities.Evaluation
 {
+	using System;
+
 	/// <summary>
 	/// Extension methods to build over evaluators (<see cref="IEvaluator"/>).
 	/// </summary>

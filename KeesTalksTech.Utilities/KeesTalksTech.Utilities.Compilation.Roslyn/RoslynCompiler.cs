@@ -1,12 +1,12 @@
-﻿using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using System;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-
-namespace KeesTalksTech.Utilities.Compilation.Roslyn
+﻿namespace KeesTalksTech.Utilities.Compilation.Roslyn
 {
+	using Microsoft.CodeAnalysis;
+	using Microsoft.CodeAnalysis.CSharp;
+	using System;
+	using System.IO;
+	using System.Linq;
+	using System.Reflection;
+
 	/// <summary>
 	/// Compiler that uses the Roslyn compiler (<see cref="CSharpCompilation" />).
 	/// </summary>

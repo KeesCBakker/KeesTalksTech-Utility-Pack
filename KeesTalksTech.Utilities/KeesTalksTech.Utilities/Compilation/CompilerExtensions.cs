@@ -1,8 +1,7 @@
-﻿using KeesTalksTech.Utilities.Compilation;
-using System;
-
-namespace KeesTalksTech.Utilities.Compilation
+﻿namespace KeesTalksTech.Utilities.Compilation
 {
+	using System;
+
 	/// <summary>
 	/// Extends the <see cref="ICompiler" /> namespace by adding some extra compilation methods.
 	/// Will make life easier.

@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Concurrent;
-using System.Reflection;
-
-namespace KeesTalksTech.Utilities.Compilation
+﻿namespace KeesTalksTech.Utilities.Compilation
 {
+	using System;
+	using System.Collections.Concurrent;
+	using System.Reflection;
+
 	/// <summary>
 	/// Performs compilation and caches the result in memory.
 	/// </summary>

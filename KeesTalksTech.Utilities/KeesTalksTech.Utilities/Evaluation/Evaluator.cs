@@ -1,9 +1,9 @@
-﻿using KeesTalksTech.Utilities.Compilation;
-using System;
-using System.Collections.Generic;
-
-namespace KeesTalksTech.Utiltities.Evaluation
+﻿namespace KeesTalksTech.Utiltities.Evaluation
 {
+	using KeesTalksTech.Utilities.Compilation;
+	using System;
+	using System.Collections.Generic;
+
 	/// <summary>
 	/// The evaluator aids in the compilation of classes. It will take care 
 	/// of the ceremony needed to wrap the code into a class, compile it and retrieve the result.

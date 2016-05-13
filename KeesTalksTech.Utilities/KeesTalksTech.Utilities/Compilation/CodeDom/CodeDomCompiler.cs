@@ -1,11 +1,11 @@
-﻿using KeesTalksTech.Utilities.Compilation;
-using Microsoft.CSharp;
-using System;
-using System.CodeDom.Compiler;
-using System.Reflection;
-
-namespace KeesTalkstech.Utilities.Compilation.CodeDom
+﻿namespace KeesTalkstech.Utilities.Compilation.CodeDom
 {
+	using KeesTalksTech.Utilities.Compilation;
+	using Microsoft.CSharp;
+	using System;
+	using System.CodeDom.Compiler;
+	using System.Reflection;
+
 	/// <summary>
 	/// Compiler that uses the <see cref="CSharpCodeProvider"/> for compilation.
 	/// </summary>

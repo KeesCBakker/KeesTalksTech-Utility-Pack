@@ -1,8 +1,8 @@
-﻿using Microsoft.CodeAnalysis.Emit;
-using System;
-
-namespace KeesTalksTech.Utilities.Compilation.Roslyn
+﻿namespace KeesTalksTech.Utilities.Compilation.Roslyn
 {
+	using Microsoft.CodeAnalysis.Emit;
+	using System;
+
 	/// <summary>
 	/// Object that stores the compilation exception for the Roslyn compiler.
 	/// </summary>
