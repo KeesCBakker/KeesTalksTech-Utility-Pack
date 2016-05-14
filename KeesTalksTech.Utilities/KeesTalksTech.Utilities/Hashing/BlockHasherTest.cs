@@ -12,7 +12,7 @@ namespace KeesTalksTech.Utilities.Hashing
 	{
 		[TestCategory("UnitTest")]
 		[TestMethod]
-		public async Task MD5HashString_AsyncStreamTransform_HexadecimalResult()
+		public async Task BlockHasher_AsyncStreamTransform_MD5HashStringHexadecimalResult()
 		{
 			using (var blockhasher = new BlockHasher("md5"))
 			{
@@ -30,7 +30,7 @@ namespace KeesTalksTech.Utilities.Hashing
 
 		[TestCategory("UnitTest")]
 		[TestMethod]
-		public void MD5HashString_MultipleTransforms_HexadecimalResult()
+		public void BlockHasher_MultipleTransforms_MD5HashStringHexadecimalResult()
 		{
 			using (var blockhasher = new BlockHasher("md5"))
 			{
@@ -47,7 +47,7 @@ namespace KeesTalksTech.Utilities.Hashing
 
 		[TestCategory("UnitTest")]
 		[TestMethod]
-		public void MD5HashString_SingleTransformBuffer_HexadecimalResult()
+		public void BlockHasher_SingleTransformBuffer_MD5HashStringHexadecimalResult()
 		{
 			using (var blockhasher = new BlockHasher("md5"))
 			{
@@ -61,7 +61,7 @@ namespace KeesTalksTech.Utilities.Hashing
 
 		[TestCategory("UnitTest")]
 		[TestMethod]
-		public void MD5HashString_SingleTransformPartialBuffer_HexadecimalResult()
+		public void BlockHasher_SingleTransformPartialBuffer_MD5HashStringHexadecimalResult()
 		{
 			using (var blockhasher = new BlockHasher("md5"))
 			{
@@ -75,7 +75,7 @@ namespace KeesTalksTech.Utilities.Hashing
 
 		[TestCategory("UnitTest")]
 		[TestMethod]
-		public void MD5HashString_SingleTransformString_HexadecimalResult()
+		public void BlockHasher_SingleTransformString_MD5HashStringHexadecimalResult()
 		{
 			using (var blockhasher = new BlockHasher("md5"))
 			{
@@ -85,9 +85,10 @@ namespace KeesTalksTech.Utilities.Hashing
 				Assert.AreEqual(a1, "86fb269d190d2c85f6e0468ceca42a20", "Invalid MD5 hash result.");
 			}
 		}
+
 		[TestCategory("UnitTest")]
 		[TestMethod]
-		public void MD5HashString_StreamTransform_HexadecimalResult()
+		public void BlockHasher_StreamTransform_MD5HashStringHexadecimalResult()
 		{
 			using (var blockhasher = new BlockHasher("md5"))
 			{
@@ -105,7 +106,7 @@ namespace KeesTalksTech.Utilities.Hashing
 
 		[TestCategory("UnitTest")]
 		[TestMethod]
-		public void SHA1HashString_GivenHasherSingleTransform_HexadecimalResult()
+		public void BlockHasher_GivenHasherSingleTransform_SHA1HashStringHexadecimalResult()
 		{
 			using (var blockhasher = new BlockHasher(HashAlgorithm.Create("sha1")))
 			{
