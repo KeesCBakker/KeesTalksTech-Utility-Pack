@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KeesTalkstech - Roslyn Compiler")]
+[assembly: AssemblyTitle("KeesTalkstech Utility Pack - Roslyn Compiler")]
 [assembly: AssemblyDescription("Implements the ICompiler as a Roslyn CodeDom compiler.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KeesTalksTech")]
-[assembly: AssemblyProduct("KeesTalkstech.Utilities.Compilation.Roslyn")]
+[assembly: AssemblyProduct("Utility Pack - Roslyn Compiler")]
 [assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

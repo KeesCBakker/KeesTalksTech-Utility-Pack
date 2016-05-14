@@ -113,9 +113,9 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj">
+    <ProjectReference Include="..\KeesTalksTech.Utilities\KeesTalksTech.UtilityPack.csproj">
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>
-      <Name>KeesTalksTech.Utilities</Name>
+      <Name>KeesTalksTech.UtilityPack</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

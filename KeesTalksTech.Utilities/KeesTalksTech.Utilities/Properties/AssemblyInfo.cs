@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KeesTalksTech Utilities")]
+[assembly: AssemblyTitle("KeesTalksTech Utility Pack")]
 [assembly: AssemblyDescription("Utility package with useful and less useful buidling block.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KeesTalksTech")]
-[assembly: AssemblyProduct("KeesTalksTech.Utilities")]
+[assembly: AssemblyProduct("Utility Pack")]
 [assembly: AssemblyCopyright("Copyright © 2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
