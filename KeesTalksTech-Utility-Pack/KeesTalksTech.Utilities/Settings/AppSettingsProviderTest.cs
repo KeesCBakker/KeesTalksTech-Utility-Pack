@@ -1,4 +1,5 @@
-﻿namespace KeesTalksTech.Utiltities.Settings
+﻿#if (DEBUG)
+namespace KeesTalksTech.Utiltities.Settings
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System.Configuration;
@@ -45,3 +46,4 @@
 		}
 	}
 }
+#endif
