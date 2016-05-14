@@ -68,6 +68,7 @@
 		/// The usings.
 		/// </value>
 		public List<string> Usings { get; } = new List<string>();
+
 		/// <summary>
 		/// Generates the class en compiles it into a producer.
 		/// </summary>
@@ -75,44 +76,44 @@
 		/// <returns>The producer.</returns>
 		public IProducer CreateProducer(string code)
 		{
-			var instructions = new CompilerInstructions();
-			instructions.ClassName = "_" + Guid.NewGuid().ToString("N");
-			instructions.Code = @"<<USINGS>>
+			var args = new CompilerInstructions();
+			args.ClassName = "_" + Guid.NewGuid().ToString("N");
+			args.Code = @"<<USINGS>>
 
-public class <<CLASS_NAME>>: <<BASE_TYPE>>
-{
-	public <<MODIFIER>> object Run()
+	public class <<CLASS_NAME>>: <<BASE_TYPE>>
 	{
-		<<CODE>>;
+		public <<MODIFIER>> object Run()
+		{
+			<<CODE>>;
 	
-		return null;
-	}
-}";
-			instructions.Code = instructions.Code.Replace("<<CLASS_NAME>>", instructions.ClassName);
-			instructions.Code = instructions.Code.Replace("<<BASE_TYPE>>", FixFullName(_producerType));
-			instructions.Code = instructions.Code.Replace("<<CODE>>", code);
-			instructions.AssemblyLocations.AddRange(this.AssemblyLocations);
+			return null;
+		}
+	}";
+			args.Code = args.Code.Replace("<<CLASS_NAME>>", args.ClassName);
+			args.Code = args.Code.Replace("<<BASE_TYPE>>", FixFullName(_producerType));
+			args.Code = args.Code.Replace("<<CODE>>", code);
+			args.AssemblyLocations.AddRange(this.AssemblyLocations);
 
 			if (Usings.Count > 0)
 			{
 				string usings = "using " + String.Join(";\nusing ", Usings) + ";";
-				instructions.Code = instructions.Code.Replace("<<USINGS>>", usings);
+				args.Code = args.Code.Replace("<<USINGS>>", usings);
 			}
 			else
 			{
-				instructions.Code = instructions.Code.Replace("<<USINGS>>", "");
+				args.Code = args.Code.Replace("<<USINGS>>", "");
 			}
 
 			if (_producerType.IsClass)
 			{
-				instructions.Code = instructions.Code.Replace("<<MODIFIER>>", "override");
+				args.Code = args.Code.Replace("<<MODIFIER>>", "override");
 			}
 			else
 			{
-				instructions.Code = instructions.Code.Replace("<<MODIFIER>>", "");
+				args.Code = args.Code.Replace("<<MODIFIER>>", "");
 			}
 
-			return _compiler.CompileAndCreateObject<IProducer>(instructions);
+			return _compiler.CompileAndCreateObject<IProducer>(args);
 		}
 
 		/// <summary>
@@ -124,17 +125,6 @@ public class <<CLASS_NAME>>: <<BASE_TYPE>>
 		{
 			var producer = CreateProducer(code);
 			return producer.Run();
-		}
-
-		/// <summary>
-		/// Runs the specified code.
-		/// </summary>
-		/// <typeparam name="T">The type of object that should be returned.</typeparam>
-		/// <param name="code">The code.</param>
-		/// <returns>The result.</returns>
-		public T Run<T>(string code)
-		{
-			return (T)Run(code);
 		}
 
 		/// <summary>

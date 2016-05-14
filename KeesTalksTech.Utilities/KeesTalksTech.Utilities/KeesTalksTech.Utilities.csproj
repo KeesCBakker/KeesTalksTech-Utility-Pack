@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Compilation\CachedResultCompiler.cs" />
+    <Compile Include="Compilation\CachedCompiler.cs" />
     <Compile Include="Compilation\CodeDom\CodeDomCompiler.cs" />
     <Compile Include="Compilation\CodeDom\CodeDomCompilerException.cs" />
     <Compile Include="Compilation\CodeDom\CodeDomCompilerTest.cs" />
