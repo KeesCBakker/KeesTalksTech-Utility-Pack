@@ -1,4 +1,4 @@
-# KeesTalksTech Utilities
+# KeesTalksTech Utility Pack
 
 After writing some code at [my blog KeesTalksTech.com][3] and having some code snippets laying around I decided to bundle them into a utility DLL. Makes things way easier to reference.
 
