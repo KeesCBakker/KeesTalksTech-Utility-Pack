@@ -130,7 +130,7 @@
 		/// </summary>
 		/// <param name="stream">The stream.</param>
 		/// <param name="bufferSize">Size of the buffer.</param>
-		public void Transform(Stream stream, int bufferSize = 16 * 1024)
+		public void Transform(Stream stream, int bufferSize = 8 * 1024)
 		{
 			if (stream == null)
 			{
@@ -147,7 +147,7 @@
 		}
 
 		/// <summary>
-		/// Transforms the specified string.
+		/// Transforms the specified string. Assumes UTF8 encoding.
 		/// </summary>
 		/// <param name="str">The string.</param>
 		public void Transform(string str)
@@ -156,7 +156,7 @@
 		}
 
 		/// <summary>
-		/// Transforms the specified string.
+		/// Transforms the specified string using the specified encoding.
 		/// </summary>
 		/// <param name="str">The string.</param>
 		/// <param name="encoding">The encoding.</param>
@@ -187,12 +187,12 @@
 		}
 
 		/// <summary>
-		/// Transforms the asynchronous.
+		/// Transforms the specified stream asynchronously.
 		/// </summary>
 		/// <param name="stream">The stream.</param>
 		/// <param name="bufferSize">Size of the buffer.</param>
 		/// <returns>The task.</returns>
-		public async Task TransformAsync(Stream stream, int bufferSize = 16 * 1024)
+		public async Task TransformAsync(Stream stream, int bufferSize = 8 * 1024)
 		{
 			byte[] buffer = new byte[bufferSize];
 			int read;
