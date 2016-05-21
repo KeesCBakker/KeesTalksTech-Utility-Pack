@@ -23,7 +23,6 @@
         /// </summary>
         /// <param name="cookies">The cookies. If set to <c>null</c> a container will be created.</param>
         /// <param name="autoRedirect">if set to <c>true</c> the client should handle the redirect automatically. Default value is <c>true</c></param>
-        /// <param name="setup">The setup. The setup is called before the request is done.</param>
         public BetterWebClient(CookieContainer cookies = null, bool autoRedirect = true)
         {
             CookieContainer = cookies ?? new CookieContainer();
