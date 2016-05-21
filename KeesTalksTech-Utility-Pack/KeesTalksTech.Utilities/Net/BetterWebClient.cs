@@ -100,7 +100,7 @@
         /// <value>
         /// The setup.
         /// </value>
-        Action<HttpWebRequest> Setup { get; set; }
+        public Action<HttpWebRequest> Setup { get; set; }
 
         /// <summary>
         /// Gets the header value.
