@@ -64,6 +64,9 @@
     <Compile Include="Evaluation\IEvaluator.cs" />
     <Compile Include="Hashing\BlockHasher.cs" />
     <Compile Include="Hashing\BlockHasherTest.cs" />
+    <Compile Include="Net\BetterWebClient.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Settings\AppSettingsProviderTest.cs" />
     <Compile Include="Settings\AppSettingsProvider.cs" />
