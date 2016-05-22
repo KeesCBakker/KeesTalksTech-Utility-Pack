@@ -44,8 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\Web\IWebCacheCow.cs" />
-    <Compile Include="Caching\Web\WebCacheCowExtensions.cs" />
+    <Compile Include="Caching\CacheCow.cs" />
+    <Compile Include="Caching\ICacheProvider.cs" />
+    <Compile Include="Caching\Web\WebCacheProvider.cs" />
     <Compile Include="Compilation\CachedCompiler.cs" />
     <Compile Include="Compilation\CodeDom\CodeDomCompiler.cs" />
     <Compile Include="Compilation\CodeDom\CodeDomCompilerException.cs" />
@@ -64,6 +65,7 @@
     <Compile Include="Evaluation\IEvaluator.cs" />
     <Compile Include="Hashing\BlockHasher.cs" />
     <Compile Include="Hashing\BlockHasherTest.cs" />
+    <Compile Include="Locking\NamedMonitor.cs" />
     <Compile Include="Net\BetterWebClient.cs">
       <SubType>Component</SubType>
     </Compile>
