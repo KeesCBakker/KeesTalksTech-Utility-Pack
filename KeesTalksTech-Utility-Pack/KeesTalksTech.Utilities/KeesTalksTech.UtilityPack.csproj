@@ -35,6 +35,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Caching\Web\IWebCacheCow.cs" />
+    <Compile Include="Caching\Web\WebCacheCowExtensions.cs" />
     <Compile Include="Compilation\CachedCompiler.cs" />
     <Compile Include="Compilation\CodeDom\CodeDomCompiler.cs" />
     <Compile Include="Compilation\CodeDom\CodeDomCompilerException.cs" />
