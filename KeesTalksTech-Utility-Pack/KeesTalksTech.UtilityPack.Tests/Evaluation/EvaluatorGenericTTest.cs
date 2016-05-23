@@ -1,5 +1,4 @@
-﻿#if (DEBUG)
-namespace KeesTalksTech.Utilities.Evaluation
+﻿namespace KeesTalksTech.Utilities.Evaluation
 {
 	using KeesTalkstech.Utilities.Compilation.CodeDom;
 	using KeesTalksTech.Utilities.Compilation;
@@ -58,4 +57,3 @@ namespace KeesTalksTech.Utilities.Evaluation
 		}
 	}
 }
-#endif

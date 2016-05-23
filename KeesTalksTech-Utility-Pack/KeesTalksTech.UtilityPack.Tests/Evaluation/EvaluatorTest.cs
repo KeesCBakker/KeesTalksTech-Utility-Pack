@@ -1,5 +1,4 @@
-﻿#if (DEBUG)
-namespace KeesTalksTech.Utilities.Evaluation
+﻿namespace KeesTalksTech.Utilities.Evaluation
 {
 	using KeesTalkstech.Utilities.Compilation.CodeDom;
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -26,4 +25,3 @@ namespace KeesTalksTech.Utilities.Evaluation
 		}
 	}
 }
-#endif

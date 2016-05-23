@@ -1,5 +1,4 @@
-﻿#if (DEBUG)
-namespace KeesTalksTech.Utilities.Settings
+﻿namespace KeesTalksTech.Utilities.Settings
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System.Configuration;
@@ -17,8 +16,10 @@ namespace KeesTalksTech.Utilities.Settings
 		[TestMethod]
 		public void AppSettingsProvider_Create_ObjectSettings()
 		{
-			ConfigurationManager.AppSettings["KeesTalksTech.Utiltities.Settings.MyTestSettings.UserName"] = "Kees C. Bakker";
-			ConfigurationManager.AppSettings["KeesTalksTech.Utiltities.Settings.MyTestSettings.Password"] = "1337!42";
+            var prefix = typeof(MyTestSettings).FullName.Replace("+", ".");
+
+			ConfigurationManager.AppSettings[prefix + ".UserName"] = "Kees C. Bakker";
+			ConfigurationManager.AppSettings[prefix + ".Password"] = "1337!42";
 
 			var s = AppSettingsProvider.Create<MyTestSettings>();
 
@@ -36,14 +37,15 @@ namespace KeesTalksTech.Utilities.Settings
 		[TestMethod]
 		public void AppSettingsProvider_Create_InnerClassObjectSettings()
 		{
-			ConfigurationManager.AppSettings["KeesTalksTech.Utiltities.Settings.AppSettingsProviderTest.MyInnerTestSettings.UserName"] = "Kees C. Bakker";
-			ConfigurationManager.AppSettings["KeesTalksTech.Utiltities.Settings.AppSettingsProviderTest.MyInnerTestSettings.Password"] = "1337!42";
+            var prefix = typeof(MyInnerTestSettings).FullName.Replace("+", ".");
 
-			var s = AppSettingsProvider.Create<MyInnerTestSettings>();
+            ConfigurationManager.AppSettings[prefix + ".UserName"] = "Kees C. Bakker";
+            ConfigurationManager.AppSettings[prefix + ".Password"] = "1337!42";
+
+            var s = AppSettingsProvider.Create<MyInnerTestSettings>();
 
 			Assert.AreEqual(s.UserName, "Kees C. Bakker");
 			Assert.AreEqual(s.Password, "1337!42");
 		}
 	}
 }
-#endif

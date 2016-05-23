@@ -1,5 +1,4 @@
-﻿#if (DEBUG)
-namespace KeesTalksTech.Utilities.Hashing
+﻿namespace KeesTalksTech.Utilities.Hashing
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System.Collections.Generic;
@@ -177,4 +176,3 @@ namespace KeesTalksTech.Utilities.Hashing
 		}
 	}
 }
-#endif

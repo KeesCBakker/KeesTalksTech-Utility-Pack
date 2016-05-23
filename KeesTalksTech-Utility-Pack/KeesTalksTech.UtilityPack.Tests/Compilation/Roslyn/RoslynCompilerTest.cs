@@ -1,5 +1,4 @@
-﻿#if (DEBUG)
-namespace KeesTalksTech.Utilities.Compilation.Roslyn
+﻿namespace KeesTalksTech.Utilities.Compilation.Roslyn
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System;
@@ -30,4 +29,3 @@ public class " + instruction.ClassName + ": " + typeof(IProducer).FullName + @"
 		}
 	}
 }
-#endif

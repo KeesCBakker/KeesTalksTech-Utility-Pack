@@ -1,5 +1,4 @@
-﻿#if (DEBUG)
-namespace KeesTalkstech.Utilities.Compilation.CodeDom
+﻿namespace KeesTalkstech.Utilities.Compilation.CodeDom
 {
 	using KeesTalksTech.Utilities.Compilation;
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -31,4 +30,3 @@ public class " + instruction.ClassName + ": " + typeof(IProducer).FullName + @"
 		}
 	}
 }
-#endif
