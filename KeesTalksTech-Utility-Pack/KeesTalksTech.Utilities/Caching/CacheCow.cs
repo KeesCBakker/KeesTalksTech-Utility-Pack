@@ -4,7 +4,11 @@ using System.Threading.Tasks;
 
 namespace KeesTalksTech.Utilities.Caching
 {
-	public class CacheCow
+    /// <summary>
+    /// Helps with the caching and creation of values. Supports asynchronous creation which makes
+    /// it great for the caching of API calls.
+    /// </summary>
+    public class CacheCow
 	{
 		private ICacheProvider _cacheProvider;
 		private NamedMonitor _monitor = new NamedMonitor();
@@ -25,116 +29,116 @@ namespace KeesTalksTech.Utilities.Caching
 		}
 
 		/// <summary>
-		/// Creates the value or gets the value for the specified method from cache.
+		/// Creates the value or gets the value for the specified key from cache.
 		/// A created value is stored in the cache.
 		/// </summary>
 		/// <typeparam name="T">The value type.</typeparam>
-		/// <param name="method">The method.</param>
+		/// <param name="key">The key.</param>
 		/// <param name="creator">The creator. Creates the value.</param>
 		/// <param name="cacheMinutes">The cache minutes.</param>
 		/// <returns>The value.</returns>
-		public T CreateOrGetFromCache<T>(string method, Func<T> creator, int cacheMinutes = 5)
+		public T CreateOrGetFromCache<T>(string key, Func<T> creator, int cacheMinutes = 5)
 		{
-			if (method == null)
+			if (key == null)
 			{
-				throw new ArgumentNullException(nameof(method));
+				throw new ArgumentNullException(nameof(key));
 			}
 			if (creator == null)
 			{
 				throw new ArgumentNullException(nameof(creator));
 			}
 
-			var key = CreateCacheKey(method);
+			var cacheKey = CreateCacheKey(key);
 
-			return _monitor.ExecuteWithinMonitor(key, () =>
+			return _monitor.ExecuteWithinMonitor(cacheKey, () =>
 			{
 				T value;
-				if (TryGetFromCache(method, out value))
+				if (TryGetFromCache(cacheKey, out value))
 				{
 					return value;
 				}
 
 				value = creator();
-				_cacheProvider.Insert(key, value, TimeSpan.FromMinutes(cacheMinutes));
+				_cacheProvider.Insert(cacheKey, value, TimeSpan.FromMinutes(cacheMinutes));
 				return value;
 			});
 		}
 
 		/// <summary>
-		/// Creates the value or gets the value for the specified method from cache.
-		/// A created value is stored in the cache. This method supports async.
+		/// Creates the value or gets the value for the specified key from cache.
+		/// A created value is stored in the cache. This key supports async.
 		/// </summary>
 		/// <typeparam name="T">The value type.</typeparam>
-		/// <param name="method">The method.</param>
+		/// <param name="key">The key.</param>
 		/// <param name="creator">The creator. Creates the value asynchronously.</param>
 		/// <param name="cacheMinutes">The cache minutes.</param>
 		/// <returns>
 		/// The value.
 		/// </returns>
-		public async Task<T> CreateOrGetFromCache<T>(string method, Func<Task<T>> creator, int cacheMinutes = 5)
+		public async Task<T> CreateOrGetFromCache<T>(string key, Func<Task<T>> creator, int cacheMinutes = 5)
 		{
-			if (method == null)
+			if (key == null)
 			{
-				throw new ArgumentNullException(nameof(method));
+				throw new ArgumentNullException(nameof(key));
 			}
 			if (creator == null)
 			{
 				throw new ArgumentNullException(nameof(creator));
 			}
 
-			var key = CreateCacheKey(method);
+			var cacheKey = CreateCacheKey(key);
 
-			return await _monitor.ExecuteWithinMonitor(key, async () =>
+			return await _monitor.ExecuteWithinMonitor(cacheKey, async () =>
 			{
 				T value;
-				if (TryGetFromCache(method, out value))
+				if (TryGetFromCache(cacheKey, out value))
 				{
 					return value;
 				}
 
 				value = await creator();
-				StoreInCache(method, value, cacheMinutes);
+				StoreInCache(cacheKey, value, cacheMinutes);
 
 				return value;
 			});
 		}
 
 		/// <summary>
-		/// Removes the value that is cached by the method from cache.
+		/// Removes the value that is cached by the key from cache.
 		/// </summary>
-		/// <param name="method">The method.</param>
-		public void RemoveFromCache(string method)
+		/// <param name="key">The key.</param>
+		public void RemoveFromCache(string key)
 		{
-			if (method == null)
+			if (key == null)
 			{
-				throw new ArgumentNullException(nameof(method));
+				throw new ArgumentNullException(nameof(key));
 			}
 
-			string key = CreateCacheKey(method);
-			_monitor.ExecuteWithinMonitor(key, () =>
+			string cacheKey = CreateCacheKey(key);
+			_monitor.ExecuteWithinMonitor(cacheKey, () =>
 			{
-				_cacheProvider.Remove(key);
+				_cacheProvider.Remove(cacheKey);
 			});
 		}
 
 		/// <summary>
-		/// Stores the value for the specified method in the cache.
+		/// Stores the value for the specified key in the cache.
 		/// </summary>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="method">The method.</param>
+		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
 		/// <param name="cacheMinutes">The cache minutes.</param>
-		public void StoreInCache<T>(string method, T value, int cacheMinutes = 5)
+		public void StoreInCache<T>(string key, T value, int cacheMinutes = 5)
 		{
-			if (method == null)
+			if (key == null)
 			{
-				throw new ArgumentNullException(nameof(method));
+				throw new ArgumentNullException(nameof(key));
 			}
 
-			string key = CreateCacheKey(method);
-			_monitor.ExecuteWithinMonitor(key, () =>
+			string cacheKey = CreateCacheKey(key);
+			_monitor.ExecuteWithinMonitor(cacheKey, () =>
 			{
-				_cacheProvider.Insert(key, value, TimeSpan.FromMinutes(cacheMinutes));
+				_cacheProvider.Insert(cacheKey, value, TimeSpan.FromMinutes(cacheMinutes));
 			});
 		}
 
@@ -142,18 +146,18 @@ namespace KeesTalksTech.Utilities.Caching
 		/// Tries to get the value from cache.
 		/// </summary>
 		/// <typeparam name="T">The value type.</typeparam>
-		/// <param name="method">The method.</param>
+		/// <param name="key">The key.</param>
 		/// <param name="value">The value.</param>
 		/// <returns><c>true</c> if successful.</returns>
-		public bool TryGetFromCache<T>(string method, out T value)
+		public bool TryGetFromCache<T>(string key, out T value)
 		{
-			if (method == null)
+			if (key == null)
 			{
-				throw new ArgumentNullException(nameof(method));
+				throw new ArgumentNullException(nameof(key));
 			}
 
-			string key = CreateCacheKey(method);
-			var cache = _cacheProvider[key];
+			string cacheKey = CreateCacheKey(key);
+			var cache = _cacheProvider[cacheKey];
 
 			if (cache == null || !(cache is T))
 			{
@@ -168,11 +172,11 @@ namespace KeesTalksTech.Utilities.Caching
 		/// <summary>
 		/// Creates the cache key.
 		/// </summary>
-		/// <param name="method">The method.</param>
-		/// <returns>The key.</returns>
-		private string CreateCacheKey(string method)
+		/// <param name="key">The key.</param>
+		/// <returns>The cache key.</returns>
+		private string CreateCacheKey(string key)
 		{
-			return _prefix + "." + method;
+			return _prefix + "." + key;
 		}
 	}
 }
