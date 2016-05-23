@@ -3,7 +3,11 @@ using System.Web;
 
 namespace KeesTalksTech.Utilities.Caching.Web
 {
-	public class WebCacheProvider : ICacheProvider
+    /// <summary>
+    /// Adapter for web caching.
+    /// </summary>
+    /// <seealso cref="KeesTalksTech.Utilities.Caching.ICacheProvider" />
+    public class WebCacheProvider : ICacheProvider
 	{
 		/// <summary>
 		/// Gets the <see cref="System.Object"/> with the specified key.
@@ -19,7 +23,7 @@ namespace KeesTalksTech.Utilities.Caching.Web
 		{
 			get
 			{
-				return HttpContext.Current.Cache?[key];
+				return HttpContext.Current?.Cache?[key];
 			}
 		}
 
