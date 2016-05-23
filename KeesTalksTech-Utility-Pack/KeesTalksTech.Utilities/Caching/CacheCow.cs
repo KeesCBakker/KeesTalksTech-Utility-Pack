@@ -1,8 +1,8 @@
-﻿using KeesTalksTech.Utiltities.Locking;
+﻿using KeesTalksTech.Utilities.Locking;
 using System;
 using System.Threading.Tasks;
 
-namespace KeesTalksTech.Utiltities.Caching
+namespace KeesTalksTech.Utilities.Caching
 {
 	public class CacheCow
 	{

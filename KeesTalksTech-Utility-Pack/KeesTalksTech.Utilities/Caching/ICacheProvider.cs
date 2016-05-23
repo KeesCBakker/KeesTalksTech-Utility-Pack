@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace KeesTalksTech.Utiltities.Caching
+namespace KeesTalksTech.Utilities.Caching
 {
 	public interface ICacheProvider
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace KeesTalksTech.Utiltities.Caching.Web
+namespace KeesTalksTech.Utilities.Caching.Web
 {
 	public class WebCacheProvider : ICacheProvider
 	{

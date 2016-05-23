@@ -1,4 +1,4 @@
-﻿namespace KeesTalksTech.Utiltities.Net
+﻿namespace KeesTalksTech.Utilities.Net
 {
     using System;
     using System.Net;

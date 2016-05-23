@@ -1,5 +1,5 @@
 ﻿#if (DEBUG)
-namespace KeesTalksTech.Utiltities.Settings
+namespace KeesTalksTech.Utilities.Settings
 {
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System.Configuration;

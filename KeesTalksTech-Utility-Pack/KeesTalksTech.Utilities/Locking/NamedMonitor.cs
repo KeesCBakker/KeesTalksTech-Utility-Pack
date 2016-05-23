@@ -1,31 +1,45 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace KeesTalksTech.Utiltities.Locking
+namespace KeesTalksTech.Utilities.Locking
 {
-	public class NamedMonitor
+    /// <summary>
+    /// A NamedMonitor creates a locking mechanism that will lock on keys. 
+    /// </summary>
+    public class NamedMonitor
 	{
 		private Dictionary<string, object> _monitors = new Dictionary<string, object>();
 		private object _mutex = new object();
 		private string _prefix = Guid.NewGuid().ToString();
 
-		public void Enter(string key)
+        /// <summary>
+        /// Enters the monitor.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        public void Enter(string key)
 		{
 			var l = GetLockingObject(key);
 			Monitor.Enter(l);
 		}
 
-		public void Exit(string key)
+        /// <summary>
+        /// Exits the monitor.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        public void Exit(string key)
 		{
 			var l = GetLockingObject(key);
 			Monitor.Exit(l);
 		}
 
-		private object GetLockingObject(string key)
+        /// <summary>
+        /// Gets the locking object.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <returns>The object that can be used for locking.</returns>
+        private object GetLockingObject(string key)
 		{
 			lock (_mutex)
 			{
@@ -42,7 +56,14 @@ namespace KeesTalksTech.Utiltities.Locking
 			}
 		}
 
-		public async Task<T> ExecuteWithinMonitor<T>(string key, Func<Task<T>> func)
+        /// <summary>
+        /// Executes the function within a monitor.
+        /// </summary>
+        /// <typeparam name="T">The resulting type.</typeparam>
+        /// <param name="key">The key.</param>
+        /// <param name="func">The function.</param>
+        /// <returns>An async task.</returns>
+        public async Task<T> ExecuteWithinMonitor<T>(string key, Func<Task<T>> func)
 		{
 			try
 			{
@@ -55,7 +76,14 @@ namespace KeesTalksTech.Utiltities.Locking
 			}
 		}
 
-		public T ExecuteWithinMonitor<T>(string key, Func<T> func)
+        /// <summary>
+        /// Executes the function within monitor.
+        /// </summary>
+        /// <typeparam name="T">The resulting type.</typeparam>
+        /// <param name="key">The key.</param>
+        /// <param name="func">The function.</param>
+        /// <returns>The result.</returns>
+        public T ExecuteWithinMonitor<T>(string key, Func<T> func)
 		{
 			try
 			{
@@ -68,7 +96,12 @@ namespace KeesTalksTech.Utiltities.Locking
 			}
 		}
 
-		public void ExecuteWithinMonitor(string key, Action action)
+        /// <summary>
+        /// Executes the action within the monitor.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="action">The action.</param>
+        public void ExecuteWithinMonitor(string key, Action action)
 		{
 			try
 			{
@@ -80,5 +113,5 @@ namespace KeesTalksTech.Utiltities.Locking
 				Exit(key);
 			}
 		}
-	}
+    }
 }

@@ -1,4 +1,4 @@
-﻿namespace KeesTalksTech.Utiltities.Evaluation
+﻿namespace KeesTalksTech.Utilities.Evaluation
 {
 	using KeesTalksTech.Utilities.Compilation;
 	using System.Collections.Generic;

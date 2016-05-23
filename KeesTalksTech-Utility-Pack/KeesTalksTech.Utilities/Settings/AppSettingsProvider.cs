@@ -1,4 +1,4 @@
-﻿namespace KeesTalksTech.Utiltities.Settings
+﻿namespace KeesTalksTech.Utilities.Settings
 {
 	using System;
 	using System.ComponentModel.DataAnnotations;

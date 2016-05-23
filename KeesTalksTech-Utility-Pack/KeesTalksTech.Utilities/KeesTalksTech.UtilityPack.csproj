@@ -7,8 +7,8 @@
     <ProjectGuid>{B4831004-64D0-4137-B289-70CEC983A035}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KeesTalksTech.Utiltities</RootNamespace>
-    <AssemblyName>KeesTalksTech.Utiltities</AssemblyName>
+    <RootNamespace>KeesTalksTech.Utilities</RootNamespace>
+    <AssemblyName>KeesTalksTech.Utilities</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

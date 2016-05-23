@@ -1,5 +1,5 @@
 ﻿#if (DEBUG)
-namespace KeesTalksTech.Utiltities.Evaluation
+namespace KeesTalksTech.Utilities.Evaluation
 {
 	using KeesTalkstech.Utilities.Compilation.CodeDom;
 	using KeesTalksTech.Utilities.Compilation;
