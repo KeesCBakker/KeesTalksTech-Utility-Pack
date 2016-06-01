@@ -6,7 +6,7 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 - **[MetafileUtility][13]**<br/>Helps with saving EMF and WMF files to PNG or JPG (or any desired format supported by .Net).
 - **[CacheCow][6]**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
 - **[StreamUtility][14]**<br/>Compares two streams.
-- 
+
 ## Version 0.1
 
 - **[AppSettingsProvider][12]**<br/>Provides app settings from the .config to the application. Can be used to automatically fill settings objects using the convention: {namespace}.{class-name}.{field-name} <br/>Check: [Auto fill settings objects with .config values][4]
