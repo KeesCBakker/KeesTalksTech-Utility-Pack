@@ -4,8 +4,8 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 
 ## Version 0.2
 - **MetafileUtility**<br/>Helps with saving EMF and WMF files to PNG or JPG (or any desired format supported by .Net).
-- **WebCacheCow**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
-- **StreamUtility**<br/>Compares two streams.
+- **[CacheCow][6]**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
+- **CacheCow**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
 
 ## Version 0.1
 
@@ -20,3 +20,4 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 [3]:https://keestalkstech.com
 [4]:https://keestalkstech.com/2016/03/auto-fill-settings-objects-with-config-values/
 [5]:https://keestalkstech.com/2014/03/a-slightly-better-webclient-class/
+[6]:https://github.com/KeesCBakker/KeesTalksTech-Utility-Pack/blob/master/KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Caching/CacheCow.cs
