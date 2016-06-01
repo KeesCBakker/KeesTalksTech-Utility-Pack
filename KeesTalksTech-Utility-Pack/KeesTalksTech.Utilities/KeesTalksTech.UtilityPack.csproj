@@ -60,6 +60,8 @@
     <Compile Include="Evaluation\EvaluatorExtensions.cs" />
     <Compile Include="Evaluation\EvaluatorGenericT.cs" />
     <Compile Include="Evaluation\IEvaluator.cs" />
+    <Compile Include="Graphics\BoundingBox.cs" />
+    <Compile Include="Graphics\MetafileMeta.cs" />
     <Compile Include="Graphics\MetafileUtility.cs" />
     <Compile Include="Hashing\BlockHasher.cs" />
     <Compile Include="IO\StreamUtility.cs" />

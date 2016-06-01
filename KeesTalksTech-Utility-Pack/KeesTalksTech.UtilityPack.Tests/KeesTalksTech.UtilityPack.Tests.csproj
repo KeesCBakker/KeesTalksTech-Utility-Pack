@@ -58,6 +58,7 @@
     <Compile Include="Compilation\Roslyn\RoslynCompilerTest.cs" />
     <Compile Include="Evaluation\EvaluatorGenericTTest.cs" />
     <Compile Include="Evaluation\EvaluatorTest.cs" />
+    <Compile Include="Graphics\BoundingBoxTest.cs" />
     <Compile Include="Hashing\BlockHasherTest.cs" />
     <Compile Include="IO\StreamUtilityTest.cs" />
     <Compile Include="Locking\NamedMonitorTest.cs" />
