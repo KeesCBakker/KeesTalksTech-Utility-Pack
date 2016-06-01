@@ -11,6 +11,8 @@
     /// </summary>
     public static class MetafileUtility
     {
+        private static readonly ImageFormat[] transparentFormats = { ImageFormat.Gif, ImageFormat.Png, ImageFormat.Wmf, ImageFormat.Emf };
+
         /// <summary>
         /// Gets the metafile meta data.
         /// </summary>
@@ -247,14 +249,10 @@
         /// </summary>
         /// <param name="format">The format.</param>
         /// <returns>The color.</returns>
-        private static Color? GetDefaultBackgroundColor(ImageFormat format)
+        private static Color GetDefaultBackgroundColor(ImageFormat format)
         {
-            Color? backgroundColor;
-            var transparentFormats = new ImageFormat[] { ImageFormat.Gif, ImageFormat.Png, ImageFormat.Wmf, ImageFormat.Emf };
             var isTransparentFormat = transparentFormats.Contains(format);
-
-            backgroundColor = isTransparentFormat ? Color.Transparent : Color.White;
-            return backgroundColor;
+            return isTransparentFormat ? Color.Transparent : Color.White;
         }
     }
 }
