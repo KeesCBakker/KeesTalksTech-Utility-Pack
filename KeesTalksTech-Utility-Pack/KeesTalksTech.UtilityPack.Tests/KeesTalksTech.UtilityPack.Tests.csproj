@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -46,7 +47,9 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
@@ -56,7 +59,9 @@
     <Compile Include="Evaluation\EvaluatorGenericTTest.cs" />
     <Compile Include="Evaluation\EvaluatorTest.cs" />
     <Compile Include="Hashing\BlockHasherTest.cs" />
+    <Compile Include="IO\StreamUtilityTest.cs" />
     <Compile Include="Locking\NamedMonitorTest.cs" />
+    <Compile Include="Graphics\MetafileUtilityTest.cs" />
     <Compile Include="Settings\AppSettingsProviderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -69,6 +74,13 @@
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>
       <Name>KeesTalksTech.UtilityPack</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MetafileUtility_EMF_PNG.png" />
+    <EmbeddedResource Include="Resources\MetafileUtility_EMF.emf" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\MetafileUtility_EMF_JPG.jpg" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

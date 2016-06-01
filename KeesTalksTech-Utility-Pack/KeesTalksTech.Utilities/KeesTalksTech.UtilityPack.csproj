@@ -34,6 +34,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,7 +60,9 @@
     <Compile Include="Evaluation\EvaluatorExtensions.cs" />
     <Compile Include="Evaluation\EvaluatorGenericT.cs" />
     <Compile Include="Evaluation\IEvaluator.cs" />
+    <Compile Include="Graphics\MetafileUtility.cs" />
     <Compile Include="Hashing\BlockHasher.cs" />
+    <Compile Include="IO\StreamUtility.cs" />
     <Compile Include="Locking\NamedMonitor.cs" />
     <Compile Include="Net\BetterWebClient.cs">
       <SubType>Component</SubType>

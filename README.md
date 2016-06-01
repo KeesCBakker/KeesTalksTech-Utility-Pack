@@ -3,7 +3,9 @@
 After writing some code at [my blog KeesTalksTech.com][3] and having some code snippets laying around I decided to bundle them into a utility DLL. Makes things way easier to reference.
 
 ## Version 0.2
+- **MetafileUtility**<br/>Helps with saving EMF and WMF files to PNG or JPG (or any desired format supported by .Net).
 - **WebCacheCow**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
+- **StreamUtility**<br/>Compares two streams.
 
 ## Version 0.1
 
