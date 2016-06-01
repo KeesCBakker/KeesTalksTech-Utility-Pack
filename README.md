@@ -3,8 +3,9 @@
 After writing some code at [my blog KeesTalksTech.com][3] and having some code snippets laying around I decided to bundle them into a utility DLL. Makes things way easier to reference.
 
 ## Version 0.2
-- **[MetafileUtility][13]**<br/>Helps with saving EMF and WMF files to PNG or JPG (or any desired format supported by .Net).
+- **[BoundingBox][15]**<br/>A conceptual box that can be used to calculate new boxed based on the same resolution.
 - **[CacheCow][6]**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
+- **[MetafileUtility][13]**<br/>Helps with saving EMF and WMF files to PNG or JPG (or any desired format supported by .Net).
 - **[StreamUtility][14]**<br/>Compares two streams.
 
 ## Version 0.1
@@ -29,3 +30,4 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 [12]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Settings/AppSettingsProvider.cs
 [13]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Graphics/MetafileUtility.cs
 [14]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/IO/StreamUtility.cs
+[15]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Graphics/BoundingBox.cs
