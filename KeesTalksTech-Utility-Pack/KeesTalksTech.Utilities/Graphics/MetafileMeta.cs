@@ -7,18 +7,54 @@ using System.Threading.Tasks;
 
 namespace KeesTalksTech.Utilities.Graphics
 {
+    /// <summary>
+    /// Meta information for a meta file (EMF, WMF).
+    /// </summary>
     public class MetafileMeta
     {
+        /// <summary>
+        /// Gets the width.
+        /// </summary>
+        /// <value>
+        /// The width.
+        /// </value>
         public int Width { get; private set; }
 
+        /// <summary>
+        /// Gets the height.
+        /// </summary>
+        /// <value>
+        /// The height.
+        /// </value>
         public int Height { get; private set; }
 
+        /// <summary>
+        /// Gets the horizontal DPI.
+        /// </summary>
+        /// <value>
+        /// The DPI.
+        /// </value>
         public float DpiX { get; private set; }
 
+        /// <summary>
+        /// Gets the vertical DPI.
+        /// </summary>
+        /// <value>
+        /// The DPI.
+        /// </value>
         public float DpiY { get; private set; }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="MetafileMeta"/> class.
+        /// </summary>
+        /// <param name="file">The file.</param>
         public MetafileMeta(Metafile file)
         {
+            if (file == null)
+            {
+                throw new ArgumentNullException(nameof(file));
+            }
+
             Width = file.Width;
             Height = file.Height;
 

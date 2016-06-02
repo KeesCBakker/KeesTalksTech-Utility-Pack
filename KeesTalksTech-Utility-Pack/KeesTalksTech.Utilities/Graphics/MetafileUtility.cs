@@ -11,7 +11,7 @@
     /// </summary>
     public static class MetafileUtility
     {
-        private static readonly ImageFormat[] transparentFormats = { ImageFormat.Gif, ImageFormat.Png, ImageFormat.Wmf, ImageFormat.Emf };
+        private static readonly ImageFormat[] _transparentFormats = { ImageFormat.Gif, ImageFormat.Png, ImageFormat.Wmf, ImageFormat.Emf };
 
         /// <summary>
         /// Gets the metafile meta data.
@@ -20,6 +20,11 @@
         /// <returns>The meta data.</returns>
         public static MetafileMeta GetMetafileMetaData(string file)
         {
+            if (String.IsNullOrEmpty(file))
+            {
+                throw new ArgumentNullException(file);
+            }
+
             using (var stream = File.OpenRead(file))
             {
                 return GetMetafileMetaData(stream);
@@ -33,6 +38,11 @@
         /// <returns>The meta data.</returns>
         public static MetafileMeta GetMetafileMetaData(Stream stream)
         {
+            if (stream == null)
+            {
+                throw new ArgumentNullException(nameof(stream));
+            }
+
             var p = stream.Position;
             stream.Position = 0;
 
@@ -58,8 +68,6 @@
         /// <param name="backgroundColor">Color of the background.</param>
         /// <param name="format">The format. Default is PNG.</param>
         /// <param name="parameters">The parameters.</param>
-        /// <exception cref="System.ArgumentNullException">
-        /// </exception>
         public static void SaveMetaFile(
             Stream source,
             Stream destination,
@@ -136,6 +144,15 @@
             ImageFormat format = null,
             EncoderParameters parameters = null)
         {
+            if (String.IsNullOrEmpty(sourceFilePath))
+            {
+                throw new ArgumentNullException(nameof(destinationFilePath));
+            }
+            if (String.IsNullOrEmpty(sourceFilePath))
+            {
+                throw new ArgumentNullException(nameof(destinationFilePath));
+            }
+
             using (var destination = File.OpenWrite(destinationFilePath))
             {
                 using (var stream = File.OpenRead(sourceFilePath))
@@ -156,13 +173,22 @@
         /// <param name="format">The format.</param>
         /// <param name="parameters">The parameters.</param>
         public static void SaveMetaFileUsingTwoStages(
-                            string sourceFilePath,
+            string sourceFilePath,
             string destinationFilePath,
             BoundingBox box = null,
             Color? backgroundColor = null,
             ImageFormat format = null,
             EncoderParameters parameters = null)
         {
+            if (String.IsNullOrEmpty(sourceFilePath))
+            {
+                throw new ArgumentNullException(nameof(destinationFilePath));
+            }
+            if (String.IsNullOrEmpty(sourceFilePath))
+            {
+                throw new ArgumentNullException(nameof(destinationFilePath));
+            }
+
             using (var source = File.OpenRead(sourceFilePath))
             {
                 using (var destination = File.OpenWrite(destinationFilePath))
@@ -191,6 +217,14 @@
             ImageFormat format = null,
             EncoderParameters parameters = null)
         {
+            if (source == null)
+            {
+                throw new ArgumentNullException(nameof(source));
+            }
+            if (destination == null)
+            {
+                throw new ArgumentNullException(nameof(destination));
+            }
 
             using (var png = new MemoryStream())
             {
@@ -251,7 +285,7 @@
         /// <returns>The color.</returns>
         private static Color GetDefaultBackgroundColor(ImageFormat format)
         {
-            var isTransparentFormat = transparentFormats.Contains(format);
+            var isTransparentFormat = _transparentFormats.Contains(format);
             return isTransparentFormat ? Color.Transparent : Color.White;
         }
     }
