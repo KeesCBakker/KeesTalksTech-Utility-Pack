@@ -8,6 +8,23 @@ namespace KeesTalksTech.Utilities.Locking
     public class NamedMonitorTest
     {
         [TestMethod]
+        public void NamedMonitor_Exclusion()
+        {
+            var monitor = new NamedMonitor();
+
+            try
+            {
+                monitor.Enter("A");
+                monitor.Enter("B");
+            }
+            finally
+            {
+                monitor.Exit("B");
+                monitor.Exit("A");
+            }
+        }
+
+        [TestMethod]
         public void NamedMonitor_ExecuteWithinMonitor_Threaded()
         {
             var monitor = new NamedMonitor();
