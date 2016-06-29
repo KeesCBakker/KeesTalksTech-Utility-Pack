@@ -1,4 +1,4 @@
-﻿namespace KeesTalkstech.Utilities.Compilation.CodeDom
+﻿namespace KeesTalksTech.Utilities.Compilation.CodeDom
 {
 	using KeesTalksTech.Utilities.Compilation;
 	using Microsoft.VisualStudio.TestTools.UnitTesting;

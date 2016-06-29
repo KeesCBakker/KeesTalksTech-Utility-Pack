@@ -1,4 +1,4 @@
-﻿namespace KeesTalkstech.Utilities.Compilation.CodeDom
+﻿namespace KeesTalksTech.Utilities.Compilation.CodeDom
 {
 	using KeesTalksTech.Utilities.Compilation;
 	using Microsoft.CSharp;
@@ -23,7 +23,7 @@
 		/// <returns>
 		/// The assembly.
 		/// </returns>
-		/// <exception cref="KeesTalkstech.Utilities.Compilation.CodeDom.CodeDomCompilerException">Assembly could not be created.</exception>
+		/// <exception cref="KeesTalksTech.Utilities.Compilation.CodeDom.CodeDomCompilerException">Assembly could not be created.</exception>
 		public Assembly Compile(string code, params string[] assemblyLocations)
 		{
 			var parameters = new CompilerParameters();

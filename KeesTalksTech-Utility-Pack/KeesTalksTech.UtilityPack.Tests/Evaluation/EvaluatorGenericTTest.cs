@@ -1,6 +1,6 @@
 ﻿namespace KeesTalksTech.Utilities.Evaluation
 {
-	using KeesTalkstech.Utilities.Compilation.CodeDom;
+	using KeesTalksTech.Utilities.Compilation.CodeDom;
 	using KeesTalksTech.Utilities.Compilation;
 	using Microsoft.VisualStudio.TestTools.UnitTesting;
 	using System.Text;

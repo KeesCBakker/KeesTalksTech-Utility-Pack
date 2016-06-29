@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("KeesTalksTech Utility Pack")]
-[assembly: AssemblyDescription("Utility package with useful and less useful buidling block.")]
+[assembly: AssemblyDescription("Utility package with useful and less useful buidling blocks.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KeesTalksTech")]
 [assembly: AssemblyProduct("Utility Pack")]

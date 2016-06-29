@@ -1,4 +1,4 @@
-﻿namespace KeesTalkstech.Utilities.Compilation.CodeDom
+﻿namespace KeesTalksTech.Utilities.Compilation.CodeDom
 {
 	using System;
 	using System.CodeDom.Compiler;
