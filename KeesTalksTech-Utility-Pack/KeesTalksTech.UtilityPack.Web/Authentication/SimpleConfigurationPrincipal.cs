@@ -12,7 +12,7 @@ namespace KeesTalksTech.Utilities.Web.Authentication
     /// Principal that looks for appSetting "roles:{userName}" for the roles. Roles should be separated with pipes.
     /// </summary>
     /// <seealso cref="System.Security.Principal.IPrincipal" />
-    [DebuggerDisplay("{Identity.UserName")]
+    [DebuggerDisplay("{Identity.Name")]
     public class SimpleConfigurationPrincipal : IPrincipal
     {
         HashSet<string> _roles = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
