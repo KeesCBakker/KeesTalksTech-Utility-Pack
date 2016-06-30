@@ -6,6 +6,7 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 - **[BoundingBox][15]**<br/>A conceptual box that can be used to calculate new boxed based on the same resolution.
 - **[CacheCow][6]**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
 - **[MetafileUtility][13]**<br/>Helps with saving EMF and WMF files to PNG or JPG (or any desired format supported by .Net).<br/>Check: [Rasterizing EMF files with C# / .Net][16]
+- **[MVC Simple Forms Authentication][17]**<br/>Simple - but obsolete - forms authentication where user, password and roles are stored in the web.config.<br/>Check:[Simple Database-less Authentication for MVC.Net][18]
 - **[StreamUtility][14]**<br/>Compares two streams.
 
 ## Version 0.1
@@ -21,7 +22,7 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 [3]:https://keestalkstech.com
 [4]:https://keestalkstech.com/2016/03/auto-fill-settings-objects-with-config-values/
 [5]:https://keestalkstech.com/2014/03/a-slightly-better-webclient-class/
-[6]:https://github.com/KeesCBakker/KeesTalksTech-Utility-Pack/blob/master/KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Caching/CacheCow.cs
+[6]:KeesTalksTech-Utility-Pack/blob/master/KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Caching/CacheCow.cs
 [7]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Hashing/BlockHasher.cs
 [8]:https://keestalkstech.com/2016/05/a-block-hasher-helper-class/
 [9]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Evaluation/Evaluator.cs
@@ -32,3 +33,5 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 [14]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/IO/StreamUtility.cs
 [15]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Graphics/BoundingBox.cs
 [16]:https://keestalkstech.com/2016/06/rasterizing-emf-files-with-net-c/
+[17]:KeesTalksTech-Utility-Pack/tree/master/KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.Web/Mvc/Logon
+[18]:https://keestalkstech.com/2016/06/simple-database-less-authentication-for-mvc-net/
