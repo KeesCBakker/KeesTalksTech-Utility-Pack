@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.UtilityPack", "KeesTalksTech.Utilities\KeesTalksTech.UtilityPack.csproj", "{B4831004-64D0-4137-B289-70CEC983A035}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities", "KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj", "{B4831004-64D0-4137-B289-70CEC983A035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.UtilityPack.Compilation.Roslyn", "KeesTalksTech.Utilities.Compilation.Roslyn\KeesTalksTech.UtilityPack.Compilation.Roslyn.csproj", "{70DA4FC8-A28C-4E5B-B439-541FB1D24289}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Compilation.Roslyn", "KeesTalksTech.Utilities.Compilation.Roslyn\KeesTalksTech.Utilities.Compilation.Roslyn.csproj", "{70DA4FC8-A28C-4E5B-B439-541FB1D24289}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D59997CB-D08F-45B0-A26B-3C75059248C9}"
 	ProjectSection(SolutionItems) = preProject
@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.UtilityPack.UnitTests", "KeesTalksTech.UtilityPack.Tests\KeesTalksTech.UtilityPack.UnitTests.csproj", "{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.UnitTests", "KeesTalksTech.UtilityPack.Tests\KeesTalksTech.Utilities.UnitTests.csproj", "{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.UtilityPack.Web", "KeesTalksTech.UtilityPack.Web\KeesTalksTech.UtilityPack.Web.csproj", "{0B06F8C4-6778-430D-A00B-0D51A0402C5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Web", "KeesTalksTech.UtilityPack.Web\KeesTalksTech.Utilities.Web.csproj", "{0B06F8C4-6778-430D-A00B-0D51A0402C5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.UtilityPack.Settings", "KeesTalksTech.UtilityPack.Settings\KeesTalksTech.UtilityPack.Settings.csproj", "{7305F805-7C8C-462D-B4B0-E04D1BFB3751}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Settings", "KeesTalksTech.UtilityPack.Settings\KeesTalksTech.Utilities.Settings.csproj", "{7305F805-7C8C-462D-B4B0-E04D1BFB3751}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -78,17 +78,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\KeesTalksTech.Utilities.Compilation.Roslyn\KeesTalksTech.UtilityPack.Compilation.Roslyn.csproj">
+    <ProjectReference Include="..\KeesTalksTech.Utilities.Compilation.Roslyn\KeesTalksTech.Utilities.Compilation.Roslyn.csproj">
       <Project>{70da4fc8-a28c-4e5b-b439-541fb1d24289}</Project>
-      <Name>KeesTalksTech.UtilityPack.Compilation.Roslyn</Name>
+      <Name>KeesTalksTech.Utilities.Compilation.Roslyn</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KeesTalksTech.Utilities\KeesTalksTech.UtilityPack.csproj">
+    <ProjectReference Include="..\KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj">
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>
-      <Name>KeesTalksTech.UtilityPack</Name>
+      <Name>KeesTalksTech.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KeesTalksTech.UtilityPack.Settings\KeesTalksTech.UtilityPack.Settings.csproj">
+    <ProjectReference Include="..\KeesTalksTech.UtilityPack.Settings\KeesTalksTech.Utilities.Settings.csproj">
       <Project>{7305F805-7C8C-462D-B4B0-E04D1BFB3751}</Project>
-      <Name>KeesTalksTech.UtilityPack.Settings</Name>
+      <Name>KeesTalksTech.Utilities.Settings</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

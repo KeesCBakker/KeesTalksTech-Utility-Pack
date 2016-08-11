@@ -7,8 +7,8 @@
     <ProjectGuid>{7305F805-7C8C-462D-B4B0-E04D1BFB3751}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KeesTalksTech.UtilityPack.Settings</RootNamespace>
-    <AssemblyName>KeesTalksTech.UtilityPack.Settings</AssemblyName>
+    <RootNamespace>KeesTalksTech.Utilities.Settings</RootNamespace>
+    <AssemblyName>KeesTalksTech.Utilities.Settings</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
