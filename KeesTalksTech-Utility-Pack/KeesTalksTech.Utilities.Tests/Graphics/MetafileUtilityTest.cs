@@ -9,10 +9,8 @@ using System.Drawing;
 
 namespace KeesTalksTech.Utilities.Graphics
 {
-    [TestClass]
     public class MetafileUtilityTest
     {
-        [TestMethod]
         public void MetafileUtilitySaveMetaFile_EMF_PNG()
         {
             using (var emf = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.UnitTests.Resources.MetafileUtility_EMF.emf"))
@@ -30,7 +28,6 @@ namespace KeesTalksTech.Utilities.Graphics
             }
         }
 
-        [TestMethod]
         public void MetafileUtilitySaveMetaFile_EMF_JPG()
         {
             using (var emf = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.UnitTests.Resources.MetafileUtility_EMF.emf"))
