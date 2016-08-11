@@ -15,9 +15,9 @@ namespace KeesTalksTech.Utilities.Graphics
         [TestMethod]
         public void MetafileUtilitySaveMetaFile_EMF_PNG()
         {
-            using (var emf = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.Resources.MetafileUtility_EMF.emf"))
+            using (var emf = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.UnitTests.Resources.MetafileUtility_EMF.emf"))
             {
-                using (var test = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.Resources.MetafileUtility_EMF_PNG.png"))
+                using (var test = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.UnitTests.Resources.MetafileUtility_EMF_PNG.png"))
                 {
                     using (var converted = new MemoryStream())
                     {
@@ -33,9 +33,9 @@ namespace KeesTalksTech.Utilities.Graphics
         [TestMethod]
         public void MetafileUtilitySaveMetaFile_EMF_JPG()
         {
-            using (var emf = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.Resources.MetafileUtility_EMF.emf"))
+            using (var emf = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.UnitTests.Resources.MetafileUtility_EMF.emf"))
             {
-                using (var test = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.Resources.MetafileUtility_EMF_JPG.jpg"))
+                using (var test = typeof(MetafileUtilityTest).Assembly.GetManifestResourceStream("KeesTalksTech.Utilities.UnitTests.Resources.MetafileUtility_EMF_JPG.jpg"))
                 {
                     using (var converted = new MemoryStream())
                     {

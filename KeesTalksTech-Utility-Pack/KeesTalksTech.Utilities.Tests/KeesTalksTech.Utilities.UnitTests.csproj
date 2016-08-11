@@ -6,7 +6,7 @@
     <ProjectGuid>{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KeesTalksTech.Utilities</RootNamespace>
+    <RootNamespace>KeesTalksTech.Utilities.UnitTests</RootNamespace>
     <AssemblyName>KeesTalksTech.Utilities.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
