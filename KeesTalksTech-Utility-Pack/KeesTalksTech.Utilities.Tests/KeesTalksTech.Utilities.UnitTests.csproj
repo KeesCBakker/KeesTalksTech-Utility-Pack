@@ -86,7 +86,7 @@
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>
       <Name>KeesTalksTech.Utilities</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KeesTalksTech.UtilityPack.Settings\KeesTalksTech.Utilities.Settings.csproj">
+    <ProjectReference Include="..\KeesTalksTech.Utilities.Settings\KeesTalksTech.Utilities.Settings.csproj">
       <Project>{7305F805-7C8C-462D-B4B0-E04D1BFB3751}</Project>
       <Name>KeesTalksTech.Utilities.Settings</Name>
     </ProjectReference>

@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.UnitTests", "KeesTalksTech.UtilityPack.Tests\KeesTalksTech.Utilities.UnitTests.csproj", "{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Web", "KeesTalksTech.Utilities.Web\KeesTalksTech.Utilities.Web.csproj", "{0B06F8C4-6778-430D-A00B-0D51A0402C5E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Settings", "KeesTalksTech.Utilities.Settings\KeesTalksTech.Utilities.Settings.csproj", "{7305F805-7C8C-462D-B4B0-E04D1BFB3751}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.UnitTests", "KeesTalksTech.Utilities.Tests\KeesTalksTech.Utilities.UnitTests.csproj", "{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,10 +33,6 @@ Global
 		{70DA4FC8-A28C-4E5B-B439-541FB1D24289}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70DA4FC8-A28C-4E5B-B439-541FB1D24289}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70DA4FC8-A28C-4E5B-B439-541FB1D24289}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B06F8C4-6778-430D-A00B-0D51A0402C5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B06F8C4-6778-430D-A00B-0D51A0402C5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B06F8C4-6778-430D-A00B-0D51A0402C5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{7305F805-7C8C-462D-B4B0-E04D1BFB3751}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7305F805-7C8C-462D-B4B0-E04D1BFB3751}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7305F805-7C8C-462D-B4B0-E04D1BFB3751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
