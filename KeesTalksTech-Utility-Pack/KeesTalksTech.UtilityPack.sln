@@ -15,9 +15,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.UnitTests", "KeesTalksTech.UtilityPack.Tests\KeesTalksTech.Utilities.UnitTests.csproj", "{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Web", "KeesTalksTech.UtilityPack.Web\KeesTalksTech.Utilities.Web.csproj", "{0B06F8C4-6778-430D-A00B-0D51A0402C5E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Web", "KeesTalksTech.Utilities.Web\KeesTalksTech.Utilities.Web.csproj", "{0B06F8C4-6778-430D-A00B-0D51A0402C5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Settings", "KeesTalksTech.UtilityPack.Settings\KeesTalksTech.Utilities.Settings.csproj", "{7305F805-7C8C-462D-B4B0-E04D1BFB3751}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Settings", "KeesTalksTech.Utilities.Settings\KeesTalksTech.Utilities.Settings.csproj", "{7305F805-7C8C-462D-B4B0-E04D1BFB3751}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
