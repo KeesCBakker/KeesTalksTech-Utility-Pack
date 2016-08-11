@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4831004-64D0-4137-B289-70CEC983A035}</ProjectGuid>
+    <ProjectGuid>{7305F805-7C8C-462D-B4B0-E04D1BFB3751}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KeesTalksTech.Utilities</RootNamespace>
-    <AssemblyName>KeesTalksTech.Utilities</AssemblyName>
+    <RootNamespace>KeesTalksTech.UtilityPack.Settings</RootNamespace>
+    <AssemblyName>KeesTalksTech.UtilityPack.Settings</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -29,13 +32,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,38 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\CacheCow.cs" />
-    <Compile Include="Caching\ICacheProvider.cs" />
-    <Compile Include="Caching\Web\WebCacheProvider.cs" />
-    <Compile Include="Compilation\CachedCompiler.cs" />
-    <Compile Include="Compilation\CodeDom\CodeDomCompiler.cs" />
-    <Compile Include="Compilation\CodeDom\CodeDomCompilerException.cs" />
-    <Compile Include="Compilation\CompilerExtensions.cs" />
-    <Compile Include="Compilation\CompilerInstructions.cs" />
-    <Compile Include="Compilation\ICompiler.cs" />
-    <Compile Include="Compilation\ICompilerInstructions.cs" />
-    <Compile Include="Compilation\IProducer.cs" />
-    <Compile Include="Compilation\IScript.cs" />
-    <Compile Include="Evaluation\Evaluator.cs" />
-    <Compile Include="Evaluation\EvaluatorExtensions.cs" />
-    <Compile Include="Evaluation\EvaluatorGenericT.cs" />
-    <Compile Include="Evaluation\IEvaluator.cs" />
-    <Compile Include="Graphics\BoundingBox.cs" />
-    <Compile Include="Graphics\MetafileMeta.cs" />
-    <Compile Include="Graphics\MetafileUtility.cs" />
-    <Compile Include="Hashing\BlockHasher.cs" />
-    <Compile Include="IO\StreamUtility.cs" />
-    <Compile Include="Locking\NamedMonitor.cs" />
-    <Compile Include="Net\BetterWebClient.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="AppSettingsProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

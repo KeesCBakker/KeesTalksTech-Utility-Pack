@@ -86,6 +86,10 @@
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>
       <Name>KeesTalksTech.UtilityPack</Name>
     </ProjectReference>
+    <ProjectReference Include="..\KeesTalksTech.UtilityPack.Settings\KeesTalksTech.UtilityPack.Settings.csproj">
+      <Project>{7305F805-7C8C-462D-B4B0-E04D1BFB3751}</Project>
+      <Name>KeesTalksTech.UtilityPack.Settings</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Resources\MetafileUtility_EMF_PNG.png" />
