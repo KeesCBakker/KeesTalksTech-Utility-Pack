@@ -74,6 +74,7 @@
     <Compile Include="IO\StreamUtilityTest.cs" />
     <Compile Include="Locking\NamedMonitorTest.cs" />
     <Compile Include="Graphics\MetafileUtilityTest.cs" />
+    <Compile Include="Rpc\InterpretationTest.cs" />
     <Compile Include="Settings\AppSettingsProviderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -81,6 +82,10 @@
     <ProjectReference Include="..\KeesTalksTech.Utilities.Compilation.Roslyn\KeesTalksTech.Utilities.Compilation.Roslyn.csproj">
       <Project>{70da4fc8-a28c-4e5b-b439-541fb1d24289}</Project>
       <Name>KeesTalksTech.Utilities.Compilation.Roslyn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeesTalksTech.Utilities.Rpc\KeesTalksTech.Utilities.Rpc.csproj">
+      <Project>{32552CCE-11AC-4A78-92FF-683ED3E5EE96}</Project>
+      <Name>KeesTalksTech.Utilities.Rpc</Name>
     </ProjectReference>
     <ProjectReference Include="..\KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj">
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>

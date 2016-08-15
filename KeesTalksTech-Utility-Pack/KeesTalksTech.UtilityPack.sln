@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities", "KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj", "{B4831004-64D0-4137-B289-70CEC983A035}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Settings", "KeesTalksTech.Utilities.Settings\KeesTalksTech.Utilities.Settings.csproj", "{7305F805-7C8C-462D-B4B0-E04D1BFB3751}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.UnitTests", "KeesTalksTech.Utilities.Tests\KeesTalksTech.Utilities.UnitTests.csproj", "{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Rpc", "KeesTalksTech.Utilities.Rpc\KeesTalksTech.Utilities.Rpc.csproj", "{32552CCE-11AC-4A78-92FF-683ED3E5EE96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F01A3AFC-E9F1-4213-894F-AAFC2F2D7348}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32552CCE-11AC-4A78-92FF-683ED3E5EE96}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32552CCE-11AC-4A78-92FF-683ED3E5EE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32552CCE-11AC-4A78-92FF-683ED3E5EE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32552CCE-11AC-4A78-92FF-683ED3E5EE96}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
