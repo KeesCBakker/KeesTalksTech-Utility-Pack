@@ -36,3 +36,4 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 [16]:https://keestalkstech.com/2016/06/rasterizing-emf-files-with-net-c/
 [17]:KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.Web/Mvc/Logon/LogonController.cs
 [18]:https://keestalkstech.com/2016/06/simple-database-less-authentication-for-mvc-net/
+[19]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities.Rpc/Interpretation.cs
