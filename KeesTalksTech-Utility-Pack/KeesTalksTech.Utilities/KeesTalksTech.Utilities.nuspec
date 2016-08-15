@@ -6,7 +6,7 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
-    <licenseUrl>https://github.com/KeesCBakker/KeesTalksTech-Utility-Pack/blob/master/LICENSE</licenseUrl>
+    <licenseUrl>https://raw.githubusercontent.com/KeesCBakker/KeesTalksTech-Utility-Pack/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/KeesCBakker/KeesTalksTech-Utility-Pack</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/KeesCBakker/KeesTalksTech-Utility-Pack/master/KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
