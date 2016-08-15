@@ -85,9 +85,12 @@ namespace KeesTalksTech.Utilities.Rpc
                     result.Add(r);
                     continue;
                 }
-                else if(obj is JProperty)
-                {
 
+                if (obj is JProperty)
+                {
+                    var r = Execute(obj as JProperty);
+                    result.Add(r);
+                    continue;
                 }
 
                 throw new ArgumentException("Bad format.", nameof(array));
