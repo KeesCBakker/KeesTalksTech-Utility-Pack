@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json.Linq;
+using System;
 
 namespace KeesTalksTech.Utilities.Rpc
 {
@@ -7,6 +8,12 @@ namespace KeesTalksTech.Utilities.Rpc
     /// </summary>
     public interface IInterpreter
     {
+        /// <summary>
+        /// Registers the converter.
+        /// </summary>
+        /// <param name="converter">The converter.</param>
+        void RegisterConverter(TryConverter converter);
+
         /// <summary>
         /// Executes the methods defined by the JSON string.
         /// This can be an object that contains a 'method-name' property to identify the method.

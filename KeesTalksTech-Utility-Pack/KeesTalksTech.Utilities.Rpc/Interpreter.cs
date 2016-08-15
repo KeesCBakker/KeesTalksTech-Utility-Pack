@@ -3,6 +3,7 @@ using System.Linq;
 using Newtonsoft.Json.Linq;
 using System.Reflection;
 using System.Collections;
+using System.Collections.Generic;
 
 namespace KeesTalksTech.Utilities.Rpc
 {
@@ -12,6 +13,7 @@ namespace KeesTalksTech.Utilities.Rpc
     /// <seealso cref="KeesTalksTech.Utilities.Rpc.IInterpreter" />
     internal class Interpreter : IInterpreter
     {
+        private List<TryConverter> _converters = new List<TryConverter>();
         private MethodInfo[] _methods;
         private object _instance;
 
@@ -60,11 +62,6 @@ namespace KeesTalksTech.Utilities.Rpc
                 return Execute(obj as JObject);
             }
 
-            if (obj is JProperty)
-            {
-                return Execute(obj as JProperty);
-            }
-
             throw new ArgumentException("Bad format.", nameof(json));
         }
 
@@ -85,79 +82,11 @@ namespace KeesTalksTech.Utilities.Rpc
                     result.Add(r);
                     continue;
                 }
-
-                if (obj is JProperty)
-                {
-                    //skip sub objects
-                    if (obj.Parent != array)
-                    {
-                        continue;
-                    }
-
-                    var r = Execute(obj as JProperty);
-                    result.Add(r);
-                    continue;
-                }
-
+                
                 throw new ArgumentException("Bad format.", nameof(array));
             }
 
             return result.ToArray();
-        }
-
-        /// <summary>
-        /// Executes the method specified by the JSON object. Must contain a 'method-name' property to identity the method.
-        /// </summary>
-        /// <param name="obj">The object.</param>
-        /// <returns>
-        /// The result of the method.
-        /// </returns>
-        public object Execute(JProperty obj)
-        {
-            if (obj == null)
-            {
-                throw new ArgumentNullException(nameof(obj));
-            }
-
-            var name = obj.Value.ToString();
-            if (String.IsNullOrEmpty(name))
-            {
-                throw new ArgumentException("No name specified.", nameof(obj));
-            }
-
-            var methods = _methods
-                .Where(m => m.Name == name)
-                .Where(m =>
-                    (m.IsStatic && m.GetParameters().Length == 1) ||
-                    (!m.IsStatic && m.GetParameters().Length == 0)
-                );
-
-            foreach (var method in methods)
-            {
-                var parameters = method.GetParameters();
-                var count = parameters.Length;
-
-                var values = new ArrayList();
-                if (method.IsStatic)
-                {
-                    values.Add(_instance);
-                    parameters = parameters.Skip(1).ToArray();
-                }
-
-                if (count == values.Count)
-                {
-                    try
-                    {
-                        return method.Invoke(_instance, values.ToArray());
-                    }
-                    catch (Exception ex)
-                    {
-
-                    }
-                }
-            }
-
-            throw new Exception($"Method '{name}' not found or could not be executed.");
         }
 
         /// <summary>
@@ -194,21 +123,47 @@ namespace KeesTalksTech.Utilities.Rpc
                     parameters = parameters.Skip(1).ToArray();
                 }
 
+                //try to fill each parameter
                 foreach (var parameter in parameters)
                 {
+                    //check if value is present
                     var value = obj[parameter.Name];
                     if (value == null)
                     {
                         break;
                     }
 
-                    var newValue = Convert.ChangeType(value, parameter.ParameterType);
-                    if (newValue == null)
+                    try
+                    {
+                        //try value conversion
+                        bool found = false;
+                        string stringValue = value.ToString();
+
+                        foreach (var converter in _converters)
+                        {
+                            object convertedValue = null;
+
+                            if (converter.Invoke(parameter, stringValue, out convertedValue))
+                            {
+                                values.Add(convertedValue);
+                                found = true;
+                                break;
+                            }
+                        }
+
+                        if (found)
+                        {
+                            continue;
+                        }
+
+                        //try generic change type
+                        object newValue = Convert.ChangeType(value, parameter.ParameterType);
+                        values.Add(newValue);
+                    }
+                    catch
                     {
                         break;
                     }
-
-                    values.Add(newValue);
                 }
 
                 if (count == values.Count)
@@ -225,6 +180,15 @@ namespace KeesTalksTech.Utilities.Rpc
             }
 
             throw new Exception($"Method '{name}' not found or could not be executed.");
+        }
+
+        /// <summary>
+        /// Registers the converter.
+        /// </summary>
+        /// <param name="converter">The converter.</param>
+        public void RegisterConverter(TryConverter converter)
+        {
+            _converters.Add(converter);
         }
     }
 }

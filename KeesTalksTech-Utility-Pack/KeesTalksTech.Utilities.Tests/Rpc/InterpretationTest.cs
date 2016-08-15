@@ -1,13 +1,60 @@
 ﻿using KeesTalksTech.Utilities.Rpc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 using System;
+using System.Drawing;
 using System.Linq;
+using System.Reflection;
 
 namespace KeesTalksTech.Utilities.UnitTests.Rpc
 {
     [TestClass]
     public class InterpretationTest
     {
+        [TestMethod]
+        public void Interpretation_ExecutMethodWithConverter()
+        {
+            var json = @"{ ""method-name"": ""SetVariants"", ""colors"": [""red"", ""green"", ""blue""] }";
+
+            var obj = new MyObject();
+
+            var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObjectExtensions));
+            interpreter.RegisterConverter(new TryConverter((ParameterInfo info, string value, out object newValue) =>
+            {
+                if (info.Name == "colors")
+                {
+                    var colors = JsonConvert.DeserializeObject<string[]>(value);
+                    newValue = colors.Select(c => Color.FromName(c)).ToArray();
+                    return true;
+                }
+
+                newValue = null;
+                return false;
+            }));
+
+            interpreter.Execute(json);
+
+            var expected = new Color[] { Color.Red, Color.Green, Color.Blue };
+
+            for(int i = 0;i < expected.Length; i++)
+            {
+                Assert.AreEqual(expected[i], obj.Variants[i]);
+            }
+        }
+
+        [TestMethod]
+        public void Interpretation_ExecutMethodWithIConvertable()
+        {
+            var json = @"{ ""method-name"": ""SetColor"", ""color"": ""red"" }";
+
+            var obj = new MyObject();
+
+            var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObjectExtensions));
+            interpreter.Execute(json);
+
+            Assert.AreEqual(Color.Red, obj.Color);
+        }
+
         [TestMethod]
         public void Interpretation_ExecuteArray()
         {
@@ -22,7 +69,6 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
             Assert.AreEqual("Kees C. Bakker", obj.Name);
         }
-
 
         [TestMethod]
         public void Interpretation_ExecuteMethodOnInterface()
@@ -106,6 +152,10 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
     public interface IMyObject
     {
+        void SetVariants(params Color[] colors);
+
+        void SetColor(Color color);
+
         void SetName(string name);
 
         string ToString();
@@ -115,10 +165,22 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public Color Color { get; set; }
+        public Color[] Variants { get; set; }
 
         public void SetName(string name)
         {
             Name = name;
+        }
+
+        public void SetVariants(params Color[] colors)
+        {
+            this.Variants = colors;
+        }
+
+        public void SetColor(Color color)
+        {
+            Color = color;
         }
 
         public void SetId(int id)
