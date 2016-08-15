@@ -60,6 +60,11 @@ namespace KeesTalksTech.Utilities.Rpc
                 return Execute(obj as JObject);
             }
 
+            if (obj is JProperty)
+            {
+                return Execute(obj as JProperty);
+            }
+
             throw new ArgumentException("Bad format.", nameof(json));
         }
 
@@ -80,11 +85,70 @@ namespace KeesTalksTech.Utilities.Rpc
                     result.Add(r);
                     continue;
                 }
+                else if(obj is JProperty)
+                {
+
+                }
 
                 throw new ArgumentException("Bad format.", nameof(array));
             }
 
             return result.ToArray();
+        }
+
+        /// <summary>
+        /// Executes the method specified by the JSON object. Must contain a 'method-name' property to identity the method.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <returns>
+        /// The result of the method.
+        /// </returns>
+        public object Execute(JProperty obj)
+        {
+            if (obj == null)
+            {
+                throw new ArgumentNullException(nameof(obj));
+            }
+
+            var name = obj["method-name"]?.ToString();
+            if (String.IsNullOrEmpty(name))
+            {
+                throw new ArgumentException("No name specified.", nameof(obj));
+            }
+
+            var methods = _methods
+                .Where(m => m.Name == name)
+                .Where(m =>
+                    (m.IsStatic && m.GetParameters().Length == 1) ||
+                    (!m.IsStatic && m.GetParameters().Length == 0)
+                );
+
+            foreach (var method in methods)
+            {
+                var parameters = method.GetParameters();
+                var count = parameters.Length;
+
+                var values = new ArrayList();
+                if (method.IsStatic)
+                {
+                    values.Add(_instance);
+                    parameters = parameters.Skip(1).ToArray();
+                }
+
+                if (count == values.Count)
+                {
+                    try
+                    {
+                        return method.Invoke(_instance, values.ToArray());
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+            }
+
+            throw new Exception($"Method '{name}' not found or could not be executed.");
         }
 
         /// <summary>
