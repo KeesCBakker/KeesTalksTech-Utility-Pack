@@ -9,6 +9,22 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
     public class InterpretationTest
     {
         [TestMethod]
+        public void Interpretation_ExecuteArray()
+        {
+            var json = @"[{ ""method-name"": ""SetName"", ""name"": ""Kees C. Bakker"" },
+                          { ""method-name"": ""ToString"" },
+                          { ""method-name"": ""Greet"" }]";
+
+            var obj = new MyObject();
+
+            var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObjectExtensions));
+            interpreter.Execute(json);
+
+            Assert.AreEqual("Kees C. Bakker", obj.Name);
+        }
+
+
+        [TestMethod]
         public void Interpretation_ExecuteMethodOnInterface()
         {
             var json = @"{ ""method-name"": ""SetName"", ""name"": ""Kees C. Bakker"" }";

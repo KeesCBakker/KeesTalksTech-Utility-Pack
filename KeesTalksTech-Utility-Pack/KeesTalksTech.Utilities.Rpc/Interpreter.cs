@@ -77,7 +77,7 @@ namespace KeesTalksTech.Utilities.Rpc
         {
             var result = new ArrayList();
 
-            foreach (var obj in array.Values())
+            foreach (var obj in array)
             {
                 if (obj is JObject)
                 {
@@ -88,6 +88,12 @@ namespace KeesTalksTech.Utilities.Rpc
 
                 if (obj is JProperty)
                 {
+                    //skip sub objects
+                    if (obj.Parent != array)
+                    {
+                        continue;
+                    }
+
                     var r = Execute(obj as JProperty);
                     result.Add(r);
                     continue;
@@ -113,7 +119,7 @@ namespace KeesTalksTech.Utilities.Rpc
                 throw new ArgumentNullException(nameof(obj));
             }
 
-            var name = obj["method-name"]?.ToString();
+            var name = obj.Value.ToString();
             if (String.IsNullOrEmpty(name))
             {
                 throw new ArgumentException("No name specified.", nameof(obj));
