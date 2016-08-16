@@ -12,7 +12,8 @@ namespace KeesTalksTech.Utilities.Rpc
         /// Registers the converter.
         /// </summary>
         /// <param name="converter">The converter.</param>
-        void RegisterConverter(TryConverter converter);
+        /// <returns>The interpreter (for chaining).</returns>
+        IInterpreter RegisterConverter(TryConverter converter);
 
         /// <summary>
         /// Executes the methods defined by the JSON string.

@@ -186,9 +186,14 @@ namespace KeesTalksTech.Utilities.Rpc
         /// Registers the converter.
         /// </summary>
         /// <param name="converter">The converter.</param>
-        public void RegisterConverter(TryConverter converter)
+        /// <returns>
+        /// The interpreter (for chaining).
+        /// </returns>
+        public IInterpreter RegisterConverter(TryConverter converter)
         {
             _converters.Add(converter);
+
+            return this;
         }
     }
 }
