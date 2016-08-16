@@ -19,9 +19,9 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
             var obj = new MyObject();
 
             var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObjectExtensions));
-            interpreter.RegisterConverter(new TryConverter((ParameterInfo info, string value, out object newValue) =>
+            interpreter.RegisterConverter((ParameterInfo parameter, string value, out object newValue) =>
             {
-                if (info.Name == "colors")
+                if (parameter.Name == "colors")
                 {
                     var colors = JsonConvert.DeserializeObject<string[]>(value);
                     newValue = colors.Select(c => Color.FromName(c)).ToArray();
@@ -30,7 +30,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
                 newValue = null;
                 return false;
-            }));
+            });
 
             interpreter.Execute(json);
 
