@@ -12,6 +12,21 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
     public class InterpretationTest
     {
         [TestMethod]
+        public void Interpretation_ExecutMethodWithOptionalParameter()
+        {
+            var json = @"{ ""method-name"": ""GetColorName"" }";
+
+            var obj = new MyObject();
+            obj.SetColor(Color.FromArgb(255, 44, 0));
+
+            var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObjectExtensions));
+            var result = interpreter.Execute(json);
+
+            Assert.AreEqual(obj.GetColorName(), result);
+        }
+
+
+        [TestMethod]
         public void Interpretation_ExecutMethodWithConverter()
         {
             var json = @"{ ""method-name"": ""SetVariants"", ""colors"": [""red"", ""green"", ""blue""] }";
@@ -158,6 +173,8 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
         void SetName(string name);
 
+        string GetColorName(string prefix = "#");
+
         string ToString();
     }
 
@@ -181,6 +198,11 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         public void SetColor(Color color)
         {
             Color = color;
+        }
+
+        public string GetColorName(string prefix = "#")
+        {
+            return prefix + Color.Name;
         }
 
         public void SetId(int id)

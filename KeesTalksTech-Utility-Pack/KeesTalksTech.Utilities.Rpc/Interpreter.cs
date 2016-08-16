@@ -109,7 +109,7 @@ namespace KeesTalksTech.Utilities.Rpc
                 throw new ArgumentException("No name specified.", nameof(obj));
             }
 
-            var methods = _methods.Where(m => m.Name == name).OrderByDescending(m => m.GetParameters().Length);
+            var methods = _methods.Where(m => m.Name == name).OrderByDescending(m => m.GetParameters().Length).ToArray();
 
             foreach (var method in methods)
             {
@@ -126,19 +126,28 @@ namespace KeesTalksTech.Utilities.Rpc
                 //try to fill each parameter
                 foreach (var parameter in parameters)
                 {
-                    //check if value is present
                     var value = obj[parameter.Name];
+
+                    //check if value is not present
                     if (value == null)
                     {
+                        //default value?
+                        if (parameter.HasDefaultValue)
+                        {
+                            values.Add(parameter.RawDefaultValue);
+                            continue;
+                        }
+
+                        //nothing here? Break the loop.
                         break;
                     }
 
                     try
                     {
-                        //try value conversion
                         bool found = false;
                         string stringValue = value.ToString();
 
+                        //try value conversion by converters
                         foreach (var converter in _converters)
                         {
                             object convertedValue = null;
@@ -172,10 +181,7 @@ namespace KeesTalksTech.Utilities.Rpc
                     {
                         return method.Invoke(_instance, values.ToArray());
                     }
-                    catch (Exception ex)
-                    {
-
-                    }
+                    catch (Exception ex) { }
                 }
             }
 
