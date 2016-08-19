@@ -163,7 +163,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
 
         [TestMethod]
-        [ExpectedException(typeof(Exception), "Can't execute JSON without method name.")]
+        [ExpectedException(typeof(ArgumentException), "Can't execute JSON without method name.")]
         public void Interpretation_JsonWithoutMethodName()
         {
             var json = @"{ }";
@@ -176,7 +176,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
 
         [TestMethod]
-        [ExpectedException(typeof(Exception), "Can't create interpreter for a non-interface.")]
+        [ExpectedException(typeof(ArgumentNullException), "Can't create interpreter for a non-interface.")]
         public void Interpretation_CannotCreateInterpreterOnClassType()
         {
             var obj = new MyObject();
