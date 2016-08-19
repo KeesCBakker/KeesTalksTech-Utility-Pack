@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 
 namespace KeesTalksTech.Utilities.Rpc
@@ -10,7 +12,7 @@ namespace KeesTalksTech.Utilities.Rpc
     public static class Interpretation
     {
         /// <summary>
-        /// Creates the interpreter..
+        /// Creates the interpreter.
         /// </summary>
         /// <typeparam name="TInterface">The type of the interface.</typeparam>
         /// <param name="instance">The instance.</param>
@@ -31,11 +33,46 @@ namespace KeesTalksTech.Utilities.Rpc
                 throw new Exception("Interface type must be an interface for security reasons.");
             }
 
-            var methods = type.GetMethods(System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.Public).ToList();
+            var list = new List<MethodInfo>();
 
+            AddInterfaceMethods(type, list);
+            AddExtensionMethods(extensionTypes, type, list);
+
+            return new Interpreter(instance, list.ToArray());
+        }
+
+        /// <summary>
+        /// Adds the interface methods.
+        /// </summary>
+        /// <param name="interfaceType">Type of the interface.</param>
+        /// <param name="list">The list.</param>
+        private static void AddInterfaceMethods(Type interfaceType, List<MethodInfo> list)
+        {
+            if (interfaceType == null || !interfaceType.IsInterface)
+            {
+                return;
+            }
+
+            var methods = interfaceType.GetMethods(BindingFlags.Instance | BindingFlags.Public);
+            list.AddRange(methods);
+
+            foreach (var sub in interfaceType.GetInterfaces())
+            {
+                AddInterfaceMethods(sub, list);
+            }
+        }
+
+        /// <summary>
+        /// Adds the extension methods.
+        /// </summary>
+        /// <param name="extensionTypes">The extension types.</param>
+        /// <param name="interfaceType">Type of the interface.</param>
+        /// <param name="list">The list.</param>
+        private static void AddExtensionMethods(Type[] extensionTypes, Type interfaceType, List<MethodInfo> list)
+        {
             foreach (var extensionType in extensionTypes)
             {
-                if (extensionType.IsSealed && !extensionType.IsGenericType && !type.IsNested)
+                if (extensionType.IsSealed && !extensionType.IsGenericType && !interfaceType.IsNested)
                 {
                     var extMethods = extensionType
                         .GetMethods(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public)
@@ -43,18 +80,16 @@ namespace KeesTalksTech.Utilities.Rpc
                         .Where(m =>
                         {
                             var t = m.GetParameters()[0].ParameterType;
-                            return t.IsInterface && t.IsAssignableFrom(type);
+                            return t.IsInterface && t.IsAssignableFrom(interfaceType);
                         });
 
-                    methods.AddRange(extMethods);
+                    list.AddRange(extMethods);
 
                     continue;
                 }
 
                 throw new Exception($"Type '{extensionType.FullName}' is not a class with extension methods.");
             }
-
-            return new Interpreter(instance, methods.ToArray());
         }
     }
 }
