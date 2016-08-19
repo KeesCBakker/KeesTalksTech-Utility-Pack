@@ -1,8 +1,12 @@
 language: csharp
 solution: KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.sln
+before_install:
+  - mkdir -p .nuget
+  - wget -O .nuget/nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
+  - mono .nuget/nuget.exe # Output NuGet's version number
 install:
-  - nuget restore KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.sln
-  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+  - mono .nuget/nuget.exe restore KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.sln -Verbosity detailed
+  - mono .nuget/nuget.exe install NUnit.Runners -Version 3.2.1
 script:
   - xbuild /p:Configuration=Release KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities.Tests/bin/Release/KeesTalksTech.Utilities.Tests.dll
+  - mono ./testrunner/NUnit.Runners.3.2.1/tools/nunit-console.exe ./KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities.Tests/bin/Release/KeesTalksTech.Utilities.Tests.dll
