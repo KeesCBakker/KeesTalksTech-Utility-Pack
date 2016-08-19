@@ -40,7 +40,11 @@ namespace KeesTalksTech.Utilities.Rpc
                     var extMethods = extensionType
                         .GetMethods(System.Reflection.BindingFlags.Static | System.Reflection.BindingFlags.Public)
                         .Where(m => m.IsDefined(typeof(ExtensionAttribute), false))
-                        .Where(m => m.GetParameters()[0].ParameterType == type);
+                        .Where(m =>
+                        {
+                            var t = m.GetParameters()[0].ParameterType;
+                            return t.IsInterface && t.IsAssignableFrom(type);
+                        });
 
                     methods.AddRange(extMethods);
 

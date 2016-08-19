@@ -123,6 +123,19 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+        public void Interpretation_ExecuteExtensionMethodByBaseInterfaceWithReturnType()
+        {
+            var json = @"{ ""method-name"": ""Goodbye"" }";
+            var obj = new MyObject();
+            obj.Name = "Rabbit";
+
+            var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObjectExtensions));
+            var result = interpreter.Execute(json);
+
+            Assert.AreEqual(obj.Goodbye(), result);
+        }
+
+        [TestMethod]
         public void Interpretation_ExecuteExtensionMethodWithReturnType()
         {
             var json = @"{ ""method-name"": ""Greet"" }";
@@ -165,7 +178,12 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
     }
 
-    public interface IMyObject
+    public interface IBaseObject
+    {
+        string ToString();
+    }
+
+    public interface IMyObject : IBaseObject
     {
         void SetVariants(params Color[] colors);
 
@@ -174,8 +192,6 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         void SetName(string name);
 
         string GetColorName(string prefix = "#");
-
-        string ToString();
     }
 
     public class MyObject : IMyObject
@@ -234,6 +250,11 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         public static string Greet(this IMyObject obj)
         {
             return $"Hello {obj?.ToString()}!";
+        }
+
+        public static string Goodbye(this IBaseObject obj)
+        {
+            return $"Goodbye {obj?.ToString()}!";
         }
     }
 }
