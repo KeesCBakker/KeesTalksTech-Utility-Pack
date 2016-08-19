@@ -1,0 +1,8 @@
+language: csharp
+solution: KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.sln
+install:
+  - nuget restore KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.sln
+  - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
+script:
+  - xbuild /p:Configuration=Release KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities.Tests/bin/Release/KeesTalksTech.Utilities.Tests.dll
