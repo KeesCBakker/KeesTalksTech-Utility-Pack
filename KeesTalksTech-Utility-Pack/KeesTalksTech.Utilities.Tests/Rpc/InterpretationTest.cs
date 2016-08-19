@@ -176,7 +176,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException), "Can't create interpreter for a non-interface.")]
+        [ExpectedException(typeof(Exception), "Can't create interpreter for a non-interface.")]
         public void Interpretation_CannotCreateInterpreterOnClassType()
         {
             var obj = new MyObject();
@@ -192,7 +192,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
-        [ExpectedException(typeof(Exception), "Can't create interpreter for a null object.")]
+        [ExpectedException(typeof(ArgumentNullException), "Can't create interpreter for a null object.")]
         public void Interpretation_CannotCreateInterpreterForNull()
         {
             var interpreter = Interpretation.Create<IMyObject>(null);
