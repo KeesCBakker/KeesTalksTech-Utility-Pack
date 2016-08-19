@@ -48,11 +48,6 @@ namespace KeesTalksTech.Utilities.Rpc
         /// <param name="list">The list.</param>
         private static void AddInterfaceMethods(Type interfaceType, List<MethodInfo> list)
         {
-            if (interfaceType == null || !interfaceType.IsInterface)
-            {
-                return;
-            }
-
             var methods = interfaceType.GetMethods(BindingFlags.Instance | BindingFlags.Public);
             list.AddRange(methods);
 

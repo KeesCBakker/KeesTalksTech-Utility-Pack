@@ -161,6 +161,20 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
             var result = interpreter.Execute(json);
         }
 
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception), "Can't execute JSON without method name.")]
+        public void Interpretation_JsonWithoutMethodName()
+        {
+            var json = @"{ }";
+            var obj = new MyObject();
+
+            var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObjectExtensions));
+            var result = interpreter.Execute(json);
+        }
+
+
+
         [TestMethod]
         [ExpectedException(typeof(Exception), "Can't create interpreter for a non-interface.")]
         public void Interpretation_CannotCreateInterpreterOnClassType()
@@ -176,6 +190,14 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
             var obj = new MyObject();
             var interpreter = Interpretation.Create<IMyObject>(obj, typeof(MyObject));
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception), "Can't create interpreter for a null object.")]
+        public void Interpretation_CannotCreateInterpreterForNull()
+        {
+            var interpreter = Interpretation.Create<IMyObject>(null);
+        }
+
     }
 
     public interface IBaseObject
