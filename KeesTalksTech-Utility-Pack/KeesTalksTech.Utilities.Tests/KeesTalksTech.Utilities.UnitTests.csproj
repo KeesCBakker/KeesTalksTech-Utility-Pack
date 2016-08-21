@@ -78,6 +78,10 @@
     <Compile Include="IO\StreamUtilityTest.cs" />
     <Compile Include="Locking\NamedMonitorTest.cs" />
     <Compile Include="Graphics\MetafileUtilityTest.cs" />
+    <Compile Include="Rpc\Examples\IRemoteTimer.cs" />
+    <Compile Include="Rpc\Examples\IRemoteTimerExtensions.cs" />
+    <Compile Include="Rpc\Examples\RemoteTimer.cs" />
+    <Compile Include="Rpc\Examples\RemoteTimerExampleTest.cs" />
     <Compile Include="Rpc\InterpretationTest.cs" />
     <Compile Include="Settings\AppSettingsProviderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
