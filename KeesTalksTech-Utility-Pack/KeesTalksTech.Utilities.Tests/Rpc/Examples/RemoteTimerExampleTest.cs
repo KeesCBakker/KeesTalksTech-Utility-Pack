@@ -27,7 +27,6 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc.Examples
             Thread.Sleep(50);
 
             /* Pause the timer twice and assert running state */
-            timer.Start(); 
 
             json = @"{ ""method-name"": ""Pause"" }";
             interpretor.Execute(json);
@@ -40,7 +39,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc.Examples
             Thread.Sleep(50);
 
             /* Stop the timer, set a new interval and restart it: */
-            json = @"[{ ""method-name"": ""Stop""},
+            json =   @"[{ ""method-name"": ""Stop""},
                         { ""method-name"": ""SetInterval"", ""newInterval"": 20 },
                         { ""method-name"": ""Start""}]";
 
