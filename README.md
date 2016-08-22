@@ -5,7 +5,7 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 ## Version 0.2
 - **[BoundingBox][15]**<br/>A conceptual box that can be used to calculate new boxed based on the same resolution.
 - **[CacheCow][6]**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
-- **[Interpreter][19]**<br/>Maps JSON commands to a method of an interface to facilitate remote RPC (still need to blog about this).
+- **[Interpreter][19]**<br/>Maps JSON commands to methods of an interface to aid in RPC.<br/>Check:[How to dynamically map JSON commands to object methods in .Net?][20]
 - **[MetafileUtility][13]**<br/>Helps with saving EMF and WMF files to PNG or JPG (or any desired format supported by .Net).<br/>Check: [Rasterizing EMF files with C# / .Net][16]
 - **[MVC Simple Forms Authentication][17]**<br/>Simple - but obsolete - forms authentication where user, password and roles are stored in the web.config.<br/>Check: [Simple Database-less Authentication for MVC.Net][18]
 - **[StreamUtility][14]**<br/>Compares two streams.
@@ -37,3 +37,4 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 [17]:KeesTalksTech-Utility-Pack/KeesTalksTech.UtilityPack.Web/Mvc/Logon/LogonController.cs
 [18]:https://keestalkstech.com/2016/06/simple-database-less-authentication-for-mvc-net/
 [19]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities.Rpc/Interpretation.cs
+[20]:https://keestalkstech.com/2016/08/dynamically-map-json-commands-object-methods-net/
