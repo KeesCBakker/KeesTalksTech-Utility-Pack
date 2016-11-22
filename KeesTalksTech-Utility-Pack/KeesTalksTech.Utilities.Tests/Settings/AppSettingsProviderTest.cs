@@ -1,7 +1,6 @@
 ﻿namespace KeesTalksTech.Utilities.Settings
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Settings;
     using System.Configuration;
 
     class MyTestSettings

@@ -33,6 +33,16 @@
         /// <param name="obj">The object. Required.</param>
         public static void Fill(object obj)
         {
+            Fill(obj, "");
+        }
+
+        /// <summary>
+        /// Fills the public settable instance properties with the corresponding configuration values. 
+        /// Properties decorated with [Required] will throw an error if they aren't set by the configuration.
+        /// </summary>
+        /// <param name="obj">The object. Required.</param>
+        private static void Fill(object obj, string baseSettingName)
+        {
             if (obj == null)
             {
                 throw new ArgumentNullException(nameof(obj));
@@ -43,12 +53,28 @@
             foreach (var property in properties)
             {
                 var required = property.GetCustomAttribute<RequiredAttribute>() != null;
-                var value = GetValue(obj, property.Name, required);
+                var settingName = ResolveSettingName(obj, baseSettingName, property.Name);
+                var value = GetValue(settingName, required);
 
                 if (!String.IsNullOrEmpty(value))
                 {
                     object convertedValue = Convert.ChangeType(value, property.PropertyType);
                     property.SetValue(obj, convertedValue);
+                    continue;
+                }
+
+                var emptyConstructor = property.PropertyType.GetConstructor(new Type[0]);
+                if(emptyConstructor != null)
+                {
+                    //create value
+                    var propertyValue = emptyConstructor.Invoke(new object[0]);
+
+                    //fill the property
+                    var propertySettingName = ResolveSettingName(obj, baseSettingName, property.Name);
+                    Fill(propertyValue, propertySettingName);
+
+                    //assign value
+                    property.SetValue(obj, propertyValue);
                 }
             }
         }
@@ -96,12 +122,41 @@
                 throw new ArgumentNullException(nameof(field));
             }
 
-            string settingName = obj.GetType().FullName + "." + field;
-
-            //fix inner classes
-            settingName = settingName.Replace("+", ".");
-
+            string settingName = ResolveSettingName(obj, null, field);
             return GetValue(settingName, required);
+        }
+
+        /// <summary>
+        /// Gets the value for the field of an object from the configuration. 
+        /// The classname of the object is used to construct the setting name.
+        /// </summary>
+        /// <param name="baseSettingName">The base name of the setting.</param>
+        /// <param name="field">The name of the field.</param>
+        /// <param name="required">If <c>true</c> an exception will be thrown if the setting isn't present.</param>
+        /// <returns>The value.</returns>
+        private static string GetValue(string baseSettingName, string field, bool required = true)
+        {
+            string settingName = ResolveSettingName(null, baseSettingName, field);
+            return GetValue(settingName, required);
+        }
+
+        private static string ResolveSettingName(object obj, string baseSettingName, string field)
+        {
+            string setting = "";
+
+            if (!String.IsNullOrEmpty(baseSettingName))
+            {
+                setting += baseSettingName;
+            }
+            else
+            {
+                setting += obj.GetType().FullName;
+            }
+
+            setting += "." + field;
+            setting = setting.Replace("+", ".");
+
+            return setting;
         }
     }
 }

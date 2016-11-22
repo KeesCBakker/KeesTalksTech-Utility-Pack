@@ -83,6 +83,7 @@
     <Compile Include="Rpc\Examples\RemoteTimer.cs" />
     <Compile Include="Rpc\Examples\RemoteTimerExampleTest.cs" />
     <Compile Include="Rpc\InterpretationTest.cs" />
+    <Compile Include="Settings\AdvancedAppSettingsProviderTest.cs" />
     <Compile Include="Settings\AppSettingsProviderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
