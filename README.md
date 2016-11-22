@@ -3,6 +3,7 @@
 After writing some code at [my blog KeesTalksTech.com][3] and having some code snippets laying around I decided to bundle them into a utility DLL. Makes things way easier to reference.
 
 ## Version 0.2
+- **[AppSettingsProvider][12]**<br/>Provides app settings from the .config to the application. Can be used to automatically fill settings objects using the convention: {namespace}.{class-name}.{field-name} <br/>Added support for object properties and setting reuse using `$settingName$`.
 - **[BoundingBox][15]**<br/>A conceptual box that can be used to calculate new boxed based on the same resolution.
 - **[CacheCow][6]**<br/>Provides a way to cache asynchronous requests. Very usable in data services that are asynchronous and need caching.
 - **[Interpreter][19]**<br/>Maps JSON commands to methods of an interface to aid in RPC.<br/>Check: [How to dynamically map JSON commands to object methods in .Net?][20]
@@ -11,7 +12,6 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 - **[StreamUtility][14]**<br/>Compares two streams.
 
 ## Version 0.1
-
 - **[AppSettingsProvider][12]**<br/>Provides app settings from the .config to the application. Can be used to automatically fill settings objects using the convention: {namespace}.{class-name}.{field-name} <br/>Check: [Auto fill settings objects with .config values][4]
 - **[BetterWebClient][11]**<br/> A (slightly) better version of .Net's default WebClient. The extra features include: ability to disable automatic redirect handling, sessions through a cookie container, indicate to the webserver that GZip compression can be used, exposure of the HTTP status code of the last request, exposure of any response header of the last request, ability to modify the request before it is send. <br/> Check: [A (slightly) better WebClient class][5].
 - **[BlockHasher][7]**<br/>Helps with hashing streams, strings and other stuff.<br/>Check: [A BlockHasher helper class][8].
@@ -29,7 +29,7 @@ After writing some code at [my blog KeesTalksTech.com][3] and having some code s
 [9]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Evaluation/Evaluator.cs
 [10]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Compilation
 [11]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Net/BetterWebClient.cs
-[12]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Settings/AppSettingsProvider.cs
+[12]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities.Settings/AppSettingsProvider.cs
 [13]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Graphics/MetafileUtility.cs
 [14]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/IO/StreamUtility.cs
 [15]:KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/Graphics/BoundingBox.cs
