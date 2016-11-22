@@ -4,24 +4,23 @@ using System.Configuration;
 
 namespace KeesTalksTech.Utilities.UnitTests.Settings
 {
-    class OuterSettings
-    {
-        public string OuterProperty { get; set; }
-
-        public InnerSettings InnerSettings { get; set; }
-
-        public string NullProperty { get; set; }
-    }
-
-    class InnerSettings
-    {
-        public string InnerProperty { get; set; }
-    }
-
-
     [Microsoft.VisualStudio.TestTools.UnitTesting.TestClass]
-    public class AdvancedAppSettingsProviderTest
+    public class AppSettingsProviderInnerSettingsTest
     {
+        class OuterSettings
+        {
+            public string OuterProperty { get; set; }
+
+            public InnerSettings InnerSettings { get; set; }
+
+            public string NullProperty { get; set; }
+        }
+
+        class InnerSettings
+        {
+            public string InnerProperty { get; set; }
+        }
+
         [TestMethod]
         public void AppSettingsProvider_Create_AdvancedObjectSettings()
         {

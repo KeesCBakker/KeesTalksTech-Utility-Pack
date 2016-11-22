@@ -94,6 +94,11 @@
 
             string value = ConfigurationManager.AppSettings[key];
 
+            if(value != null && value.Length > 1 && value.StartsWith("$") && value.EndsWith("$"))
+            {
+                return GetValue(value.Substring(1, value.Length - 2), required);
+            }
+
             if (required && String.IsNullOrWhiteSpace(value))
             {
                 throw new Exception("Required configuration value for '" + key + "' is missing. Add it to config.");
