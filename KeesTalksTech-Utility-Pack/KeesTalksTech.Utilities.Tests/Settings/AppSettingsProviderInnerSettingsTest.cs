@@ -22,7 +22,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Settings
         }
 
         [TestMethod]
-        public void AppSettingsProvider_Create_AdvancedObjectSettings()
+        public void AppSettingsProvider_Create_InnerObjectSettings()
         {
             var prefix = typeof(OuterSettings).FullName.Replace("+", ".");
 

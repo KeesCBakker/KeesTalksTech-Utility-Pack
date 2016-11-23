@@ -14,7 +14,7 @@
         }
 
         [TestMethod]
-		public void AppSettingsProvider_Create_ObjectSettings()
+		public void AppSettingsProvider_Create_ReusedSetting()
 		{
             var prefix = typeof(NetworkSettings).FullName.Replace("+", ".");
 
@@ -28,25 +28,22 @@
 			Assert.AreEqual(s.Port, 8080);
 		}
 
-		class MyInnerTestSettings
-		{
-			public string UserName { get; set; }
+        public class EscapedSetting
+        {
+            public string EscapedValue { get; set; }
+        }
 
-			public string Password { get; set; }
-		}
+        [TestMethod]
+        public void AppSettingsProvider_Create_EscapedSettings()
+        {
+            var prefix = typeof(EscapedSetting).FullName.Replace("+", ".");
 
-		[TestMethod]
-		public void AppSettingsProvider_Create_InnerClassObjectSettings()
-		{
-            var prefix = typeof(MyInnerTestSettings).FullName.Replace("+", ".");
+            ConfigurationManager.AppSettings[prefix + ".EscapedValue"] = "$$MyDollarEscapedPassword$";
 
-            ConfigurationManager.AppSettings[prefix + ".UserName"] = "Kees C. Bakker";
-            ConfigurationManager.AppSettings[prefix + ".Password"] = "1337!42";
+            var s = AppSettingsProvider.Create<EscapedSetting>();
 
-            var s = AppSettingsProvider.Create<MyInnerTestSettings>();
+            Assert.AreEqual(s.EscapedValue, "$MyDollarEscapedPassword$");
+        }
 
-			Assert.AreEqual(s.UserName, "Kees C. Bakker");
-			Assert.AreEqual(s.Password, "1337!42");
-		}
-	}
+    }
 }

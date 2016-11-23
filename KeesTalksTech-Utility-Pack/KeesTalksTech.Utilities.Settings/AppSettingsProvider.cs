@@ -33,7 +33,7 @@
         /// <param name="obj">The object. Required.</param>
         public static void Fill(object obj)
         {
-            Fill(obj, "");
+            Fill(obj, String.Empty);
         }
 
         /// <summary>
@@ -94,6 +94,13 @@
 
             string value = ConfigurationManager.AppSettings[key];
 
+            //check escaped value - removed first dollar
+            if(value != null && value.StartsWith("$$") && value.EndsWith("$"))
+            {
+                return value.Substring(1);
+            }
+
+            //check reused value with $settingName$.
             if(value != null && value.Length > 1 && value.StartsWith("$") && value.EndsWith("$"))
             {
                 return GetValue(value.Substring(1, value.Length - 2), required);
@@ -145,6 +152,13 @@
             return GetValue(settingName, required);
         }
 
+        /// <summary>
+        /// Resolves the name of the setting.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <param name="baseSettingName">The base name of the settings.</param>
+        /// <param name="field">The name of the field (property name).</param>
+        /// <returns>The setting name.</returns>
         private static string ResolveSettingName(object obj, string baseSettingName, string field)
         {
             string setting = "";
