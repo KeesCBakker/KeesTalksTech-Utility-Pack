@@ -53,7 +53,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.png" />
+    <None Include="logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="KeesTalksTech.Utilities.Evaluation.nuspec" />

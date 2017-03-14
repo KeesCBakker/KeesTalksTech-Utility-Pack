@@ -52,7 +52,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="logo.png" />
+    <None Include="logo.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="KeesTalksTech.Utilities.Compilation.nuspec" />
