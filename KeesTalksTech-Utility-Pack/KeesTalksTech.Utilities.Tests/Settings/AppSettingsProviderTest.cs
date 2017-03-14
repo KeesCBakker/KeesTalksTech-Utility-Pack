@@ -14,7 +14,8 @@
 	public class AppSettingsProviderTest
 	{
 		[TestMethod]
-		public void AppSettingsProvider_Create_ObjectSettings()
+		[TestCategory("UnitTest")]
+        public void AppSettingsProvider_Create_ObjectSettings()
 		{
             var prefix = typeof(MyTestSettings).FullName.Replace("+", ".");
 
@@ -35,7 +36,8 @@
 		}
 
 		[TestMethod]
-		public void AppSettingsProvider_Create_InnerClassObjectSettings()
+        [TestCategory("UnitTest")]
+        public void AppSettingsProvider_Create_InnerClassObjectSettings()
 		{
             var prefix = typeof(MyInnerTestSettings).FullName.Replace("+", ".");
 

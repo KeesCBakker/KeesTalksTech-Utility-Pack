@@ -9,6 +9,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc.Examples
     public class RemoteTimerExampleTest
     {
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void TestRemoteTimer()
         {
             var json = "";

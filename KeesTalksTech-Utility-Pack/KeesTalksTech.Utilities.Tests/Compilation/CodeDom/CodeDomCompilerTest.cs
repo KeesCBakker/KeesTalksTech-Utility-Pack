@@ -8,7 +8,8 @@
 	public class CodeDomCompilerTest
 	{
 		[TestMethod]
-		public void CodeDomCompilation_HelloWorld_Assembly()
+		[TestCategory("UnitTest")]
+        public void CodeDomCompilation_HelloWorld_Assembly()
 		{
 			var compiler = new CodeDomCompiler();
 

@@ -7,7 +7,8 @@
 	public class RoslynCompilerTest
 	{
 		[TestMethod]
-		public void RoslynCompilation_HelloWorld_Assembly()
+		[TestCategory("UnitTest")]
+        public void RoslynCompilation_HelloWorld_Assembly()
 		{
 			var compiler = new RoslynCompiler();
 

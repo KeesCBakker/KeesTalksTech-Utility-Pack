@@ -2,6 +2,9 @@
 
 After writing some code at [my blog KeesTalksTech.com][3] and having some code snippets laying around I decided to bundle them into a utility DLL. Makes things way easier to reference.
 
+## Version 0.3
+- **Evaluation** and **Compilation** are now seperate Nuget packages.
+
 ## Version 0.2
 - **[AppSettingsProvider][12]**<br/>Provides app settings from the .config to the application. Can be used to automatically fill settings objects using the convention: {namespace}.{class-name}.{field-name} <br/>Added support for object properties and setting reuse using `$settingName$`.
 - **[BoundingBox][15]**<br/>A conceptual box that can be used to calculate new boxed based on the same resolution.

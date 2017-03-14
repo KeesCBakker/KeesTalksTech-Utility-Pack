@@ -7,7 +7,8 @@
 	public class EvaluatorTest
 	{
 		[TestMethod]
-		public void Evaluator_MathPowScript_IntResult()
+		[TestCategory("UnitTest")]
+        public void Evaluator_MathPowScript_IntResult()
 		{
 			using (var compiler = new CodeDomCompiler())
 			{

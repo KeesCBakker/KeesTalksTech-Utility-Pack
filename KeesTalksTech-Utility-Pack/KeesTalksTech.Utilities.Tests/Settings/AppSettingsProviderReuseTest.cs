@@ -14,7 +14,8 @@
         }
 
         [TestMethod]
-		public void AppSettingsProvider_Create_ReusedSetting()
+		[TestCategory("UnitTest")]
+        public void AppSettingsProvider_Create_ReusedSetting()
 		{
             var prefix = typeof(NetworkSettings).FullName.Replace("+", ".");
 
@@ -34,6 +35,7 @@
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void AppSettingsProvider_Create_EscapedSettings()
         {
             var prefix = typeof(EscapedSetting).FullName.Replace("+", ".");

@@ -20,7 +20,8 @@
 		}
 
 		[TestMethod]
-		public void Evaluator_CodeDomCompilerBuilderScript_StringResult()
+		[TestCategory("UnitTest")]
+        public void Evaluator_CodeDomCompilerBuilderScript_StringResult()
 		{
 			using (var compiler = new CodeDomCompiler())
 			{

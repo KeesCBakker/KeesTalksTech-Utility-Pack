@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Uni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Rpc", "KeesTalksTech.Utilities.Rpc\KeesTalksTech.Utilities.Rpc.csproj", "{32552CCE-11AC-4A78-92FF-683ED3E5EE96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Compilation", "KeesTalksTech.Utilities.Compilation\KeesTalksTech.Utilities.Compilation.csproj", "{F155EBC5-0600-4F2E-AD48-371782143C9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Evaluation", "KeesTalksTech.Utilities.Evaluation\KeesTalksTech.Utilities.Evaluation.csproj", "{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +55,14 @@ Global
 		{32552CCE-11AC-4A78-92FF-683ED3E5EE96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{32552CCE-11AC-4A78-92FF-683ED3E5EE96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{32552CCE-11AC-4A78-92FF-683ED3E5EE96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F155EBC5-0600-4F2E-AD48-371782143C9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F155EBC5-0600-4F2E-AD48-371782143C9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F155EBC5-0600-4F2E-AD48-371782143C9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F155EBC5-0600-4F2E-AD48-371782143C9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

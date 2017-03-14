@@ -8,7 +8,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KeesTalksTech.Utilities.UnitTests</RootNamespace>
     <AssemblyName>KeesTalksTech.Utilities.Tests</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -16,6 +16,7 @@
     <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
     <IsCodedUITest>False</IsCodedUITest>
     <TestProjectType>UnitTest</TestProjectType>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -92,6 +93,14 @@
     <ProjectReference Include="..\KeesTalksTech.Utilities.Compilation.Roslyn\KeesTalksTech.Utilities.Compilation.Roslyn.csproj">
       <Project>{70da4fc8-a28c-4e5b-b439-541fb1d24289}</Project>
       <Name>KeesTalksTech.Utilities.Compilation.Roslyn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeesTalksTech.Utilities.Compilation\KeesTalksTech.Utilities.Compilation.csproj">
+      <Project>{f155ebc5-0600-4f2e-ad48-371782143c9a}</Project>
+      <Name>KeesTalksTech.Utilities.Compilation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeesTalksTech.Utilities.Evaluation\KeesTalksTech.Utilities.Evaluation.csproj">
+      <Project>{e28afa8c-e3ea-483e-86b4-4037f5cd3cc9}</Project>
+      <Name>KeesTalksTech.Utilities.Evaluation</Name>
     </ProjectReference>
     <ProjectReference Include="..\KeesTalksTech.Utilities.Rpc\KeesTalksTech.Utilities.Rpc.csproj">
       <Project>{32552CCE-11AC-4A78-92FF-683ED3E5EE96}</Project>

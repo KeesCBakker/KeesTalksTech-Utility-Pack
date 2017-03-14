@@ -1,9 +1,4 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KeesTalksTech.Utilities.Graphics
 {
@@ -11,6 +6,7 @@ namespace KeesTalksTech.Utilities.Graphics
     public class BoundingBoxTest
     {
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxScale_Landscape_Greater()
         {
             var bb = new BoundingBox(200, 100);
@@ -21,6 +17,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxScale_Portrait_Greater()
         {
             var bb = new BoundingBox(100, 200);
@@ -31,6 +28,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxScale_Landscape_Smaller()
         {
             var bb = new BoundingBox(200, 100);
@@ -41,6 +39,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxScale_Portrait_Smaller()
         {
             var bb = new BoundingBox(100, 200);
@@ -51,6 +50,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxCalculate_Landscape_SmallerSquare()
         {
             var bb = new BoundingBox(200, 100);
@@ -61,6 +61,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxCalculate_Landscape_BiggerSquare()
         {
             var bb = new BoundingBox(200, 100);
@@ -71,6 +72,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxCalculate_Square_BiggerLandscape()
         {
             var bb = new BoundingBox(200, 200);
@@ -81,6 +83,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxCalculate_Landscape_SameResolutionLandscape()
         {
             var bb = new BoundingBox(200, 100);
@@ -91,6 +94,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxCalculate_Landscape_BiggerWidescape()
         {
             var bb = new BoundingBox(200, 100);
@@ -101,6 +105,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxCalculate_Portrait_BiggerSkyscraper()
         {
             var bb = new BoundingBox(100, 200);
@@ -111,6 +116,7 @@ namespace KeesTalksTech.Utilities.Graphics
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void BoundingBoxCalculate_Portrait_Landscape()
         {
             var bb = new BoundingBox(100, 200);
@@ -119,7 +125,5 @@ namespace KeesTalksTech.Utilities.Graphics
             Assert.AreEqual(75, bb.Width);
             Assert.AreEqual(150, bb.Height);
         }
-
-
     }
 }

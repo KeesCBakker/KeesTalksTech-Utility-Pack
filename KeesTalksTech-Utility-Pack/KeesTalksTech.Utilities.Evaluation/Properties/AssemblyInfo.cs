@@ -1,15 +1,14 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("KeesTalksTech Utility Pack - Roslyn Compiler")]
-[assembly: AssemblyDescription("Implements the ICompiler as a Roslyn CodeDom compiler.")]
+[assembly: AssemblyTitle("KeesTalksTech Utility Pack - Dynamic Evaluation")]
+[assembly: AssemblyDescription("Provides utility objects for dynamic evaluation of scripts and classes.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("KeesTalksTech")]
-[assembly: AssemblyProduct("Utility Pack - Roslyn Compiler")]
+[assembly: AssemblyProduct("Utility Pack - Dynamic Evaluation")]
 [assembly: AssemblyCopyright("Copyright © 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("70da4fc8-a28c-4e5b-b439-541fb1d24289")]
+[assembly: Guid("e28afa8c-e3ea-483e-86b4-4037f5cd3cc9")]
 
 // Version information for an assembly consists of the following four values:
 //

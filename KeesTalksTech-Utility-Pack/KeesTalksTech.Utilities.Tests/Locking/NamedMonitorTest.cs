@@ -8,6 +8,7 @@ namespace KeesTalksTech.Utilities.Locking
     public class NamedMonitorTest
     {
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void NamedMonitor_Exclusion()
         {
             var monitor = new NamedMonitor();
@@ -25,6 +26,7 @@ namespace KeesTalksTech.Utilities.Locking
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void NamedMonitor_ExecuteWithinMonitor_Threaded()
         {
             var monitor = new NamedMonitor();
@@ -51,6 +53,7 @@ namespace KeesTalksTech.Utilities.Locking
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void NamedMonitor_EnterExit_Threaded()
         {
             var monitor = new NamedMonitor();

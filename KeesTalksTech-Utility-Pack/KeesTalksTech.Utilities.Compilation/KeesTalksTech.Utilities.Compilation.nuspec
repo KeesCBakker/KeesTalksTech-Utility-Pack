@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <licenseUrl>https://raw.githubusercontent.com/KeesCBakker/KeesTalksTech-Utility-Pack/master/LICENSE</licenseUrl>
     <projectUrl>https://github.com/KeesCBakker/KeesTalksTech-Utility-Pack</projectUrl>
-    <iconUrl>https://raw.githubusercontent.com/KeesCBakker/KeesTalksTech-Utility-Pack/master/KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities/logo.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/KeesCBakker/KeesTalksTech-Utility-Pack/master/KeesTalksTech-Utility-Pack/KeesTalksTech.Utilities.Compilation/logo.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes></releaseNotes>

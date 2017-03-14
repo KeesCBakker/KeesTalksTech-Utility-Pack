@@ -12,6 +12,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
     public class InterpretationTest
     {
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecutMethodWithOptionalParameter()
         {
             var json = @"{ ""method-name"": ""GetColorName"" }";
@@ -27,6 +28,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecutMethodWithConverter()
         {
             var json = @"{ ""method-name"": ""SetVariants"", ""colors"": [""red"", ""green"", ""blue""] }";
@@ -58,6 +60,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecutMethodWithIConvertable()
         {
             var json = @"{ ""method-name"": ""SetColor"", ""color"": ""red"" }";
@@ -71,6 +74,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecuteArray()
         {
             var json = @"[{ ""method-name"": ""SetName"", ""name"": ""Kees C. Bakker"" },
@@ -86,6 +90,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecuteMethodOnInterface()
         {
             var json = @"{ ""method-name"": ""SetName"", ""name"": ""Kees C. Bakker"" }";
@@ -98,6 +103,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecuteMethodOnExtensionMethod()
         {
             var json = @"{ ""method-name"": ""SetName"", ""firstName"": ""Kees"", ""middleName"": ""C."", ""lastName"" : ""Bakker"" }";
@@ -110,6 +116,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecuteMethodWithReturnType()
         {
             var json = @"{ ""method-name"": ""ToString"" }";
@@ -123,6 +130,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecuteExtensionMethodByBaseInterfaceWithReturnType()
         {
             var json = @"{ ""method-name"": ""Goodbye"" }";
@@ -136,6 +144,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void Interpretation_ExecuteExtensionMethodWithReturnType()
         {
             var json = @"{ ""method-name"": ""Greet"" }";
@@ -149,6 +158,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         [ExpectedException(typeof(Exception), "Can't execute method that's not on the interface.")]
         public void Interpretation_ExecuteClassMethod()
         {
@@ -163,6 +173,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         [ExpectedException(typeof(ArgumentException), "Can't execute JSON without method name.")]
         public void Interpretation_JsonWithoutMethodName()
         {
@@ -176,6 +187,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
 
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         [ExpectedException(typeof(Exception), "Can't create interpreter for a non-interface.")]
         public void Interpretation_CannotCreateInterpreterOnClassType()
         {
@@ -184,6 +196,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         [ExpectedException(typeof(Exception), "Can't create interpreter for a non-interface.")]
         public void Interpretation_CannotCreateInterpreterWithNonExtensionType()
         {
@@ -192,6 +205,7 @@ namespace KeesTalksTech.Utilities.UnitTests.Rpc
         }
 
         [TestMethod]
+		[TestCategory("UnitTest")]
         [ExpectedException(typeof(ArgumentNullException), "Can't create interpreter for a null object.")]
         public void Interpretation_CannotCreateInterpreterForNull()
         {

@@ -9,6 +9,7 @@ namespace KeesTalksTech.Utilities.IO
     public class StreamUtilityTest
     {
         [TestMethod]
+		[TestCategory("UnitTest")]
         public void StreamUtilityStreamEquals_StringStreams_True()
         {
             string s1 = "ABCDE", s2 = "ABCDE";
@@ -22,6 +23,7 @@ namespace KeesTalksTech.Utilities.IO
         }
 
         [TestMethod]
+        [TestCategory("UnitTest")]
         public void StreamUtilityStreamEquals_StringStreams_False()
         {
             string s1 = "ABCDE", s2 = "12345";

@@ -1,17 +1,17 @@
 ﻿namespace KeesTalksTech.Utilities.Compilation.CodeDom
 {
-	using KeesTalksTech.Utilities.Compilation;
-	using Microsoft.CSharp;
-	using System;
-	using System.CodeDom.Compiler;
-	using System.Reflection;
+    using KeesTalksTech.Utilities.Compilation;
+    using Microsoft.CSharp;
+    using System;
+    using System.CodeDom.Compiler;
+    using System.Reflection;
 
-	/// <summary>
-	/// Compiler that uses the <see cref="CSharpCodeProvider"/> for compilation.
-	/// </summary>
-	/// <seealso cref="KeesTalksTech.Utilities.Compilation.ICompiler" />
-	/// <seealso cref="System.IDisposable" />
-	public class CodeDomCompiler : ICompiler, IDisposable
+    /// <summary>
+    /// Compiler that uses the <see cref="CSharpCodeProvider"/> for compilation.
+    /// </summary>
+    /// <seealso cref="KeesTalksTech.Utilities.Compilation.ICompiler" />
+    /// <seealso cref="System.IDisposable" />
+    public class CodeDomCompiler : ICompiler, IDisposable
 	{
 		private readonly CSharpCodeProvider compiler = new CSharpCodeProvider();
 

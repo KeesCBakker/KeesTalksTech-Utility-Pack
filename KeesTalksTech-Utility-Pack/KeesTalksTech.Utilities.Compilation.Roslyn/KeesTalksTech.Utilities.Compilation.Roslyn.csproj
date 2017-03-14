@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>KeesTalksTech.Utilities.Compilation.Roslyn</RootNamespace>
     <AssemblyName>KeesTalksTech.Utilities.Compilation.Roslyn</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,6 +103,7 @@
     <Compile Include="RoslynCompiler.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="KeesTalksTech.Utilities.Compilation.Roslyn.nuspec" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -112,10 +114,17 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KeesTalksTech.Utilities.Compilation\KeesTalksTech.Utilities.Compilation.csproj">
+      <Project>{f155ebc5-0600-4f2e-ad48-371782143c9a}</Project>
+      <Name>KeesTalksTech.Utilities.Compilation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj">
       <Project>{b4831004-64d0-4137-b289-70cec983a035}</Project>
       <Name>KeesTalksTech.Utilities</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

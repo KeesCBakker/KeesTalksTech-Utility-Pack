@@ -4,14 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4831004-64D0-4137-B289-70CEC983A035}</ProjectGuid>
+    <ProjectGuid>{F155EBC5-0600-4F2E-AD48-371782143C9A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>KeesTalksTech.Utilities</RootNamespace>
-    <AssemblyName>KeesTalksTech.Utilities</AssemblyName>
+    <RootNamespace>KeesTalksTech.Utilities.Compilation</RootNamespace>
+    <AssemblyName>KeesTalksTech.Utilities.Compilation</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -32,11 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,30 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Caching\CacheCow.cs" />
-    <Compile Include="Caching\ICacheProvider.cs" />
-    <Compile Include="Caching\Web\WebCacheProvider.cs" />
-    <Compile Include="Graphics\BoundingBox.cs" />
-    <Compile Include="Graphics\MetafileMeta.cs" />
-    <Compile Include="Graphics\MetafileUtility.cs" />
-    <Compile Include="Hashing\BlockHasher.cs" />
-    <Compile Include="IO\StreamUtility.cs" />
-    <Compile Include="Locking\NamedMonitor.cs" />
-    <Compile Include="Net\BetterWebClient.cs">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="CachedCompiler.cs" />
+    <Compile Include="CodeDom\CodeDomCompiler.cs" />
+    <Compile Include="CodeDom\CodeDomCompilerException.cs" />
+    <Compile Include="CompilerExtensions.cs" />
+    <Compile Include="CompilerInstructions.cs" />
+    <Compile Include="ICompiler.cs" />
+    <Compile Include="ICompilerInstructions.cs" />
+    <Compile Include="IProducer.cs" />
+    <Compile Include="IScript.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="KeesTalksTech.Utilities.nuspec" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="KeesTalksTech.Utilities.Compilation.nuspec" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
