@@ -181,7 +181,7 @@ namespace KeesTalksTech.Utilities.Rpc
                     {
                         return method.Invoke(_instance, values.ToArray());
                     }
-                    catch (Exception ex) { }
+                    catch (Exception) { }
                 }
             }
 

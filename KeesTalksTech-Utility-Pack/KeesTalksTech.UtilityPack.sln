@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities", "KeesTalksTech.Utilities\KeesTalksTech.Utilities.csproj", "{B4831004-64D0-4137-B289-70CEC983A035}"
 EndProject
@@ -24,6 +24,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Compilation", "KeesTalksTech.Utilities.Compilation\KeesTalksTech.Utilities.Compilation.csproj", "{F155EBC5-0600-4F2E-AD48-371782143C9A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Evaluation", "KeesTalksTech.Utilities.Evaluation\KeesTalksTech.Utilities.Evaluation.csproj", "{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KeesTalksTech.Utilities.Latin.Numerals", "KeesTalksTech.Utilities.Latin.Numerals\KeesTalksTech.Utilities.Latin.Numerals.csproj", "{53683C8A-26A3-4AC4-8E3C-83EA8AC05999}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E28AFA8C-E3EA-483E-86B4-4037F5CD3CC9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53683C8A-26A3-4AC4-8E3C-83EA8AC05999}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53683C8A-26A3-4AC4-8E3C-83EA8AC05999}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53683C8A-26A3-4AC4-8E3C-83EA8AC05999}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53683C8A-26A3-4AC4-8E3C-83EA8AC05999}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

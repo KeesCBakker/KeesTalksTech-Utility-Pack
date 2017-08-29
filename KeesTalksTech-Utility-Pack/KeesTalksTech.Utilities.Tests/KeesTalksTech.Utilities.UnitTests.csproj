@@ -77,6 +77,8 @@
     <Compile Include="Graphics\BoundingBoxTest.cs" />
     <Compile Include="Hashing\BlockHasherTest.cs" />
     <Compile Include="IO\StreamUtilityTest.cs" />
+    <Compile Include="Latin\Numerals\RomanNumeralMath.cs" />
+    <Compile Include="Latin\Numerals\ClassicRomanNumeralTests.cs" />
     <Compile Include="Locking\NamedMonitorTest.cs" />
     <Compile Include="Graphics\MetafileUtilityTest.cs" />
     <Compile Include="Rpc\Examples\IRemoteTimer.cs" />
@@ -101,6 +103,10 @@
     <ProjectReference Include="..\KeesTalksTech.Utilities.Evaluation\KeesTalksTech.Utilities.Evaluation.csproj">
       <Project>{e28afa8c-e3ea-483e-86b4-4037f5cd3cc9}</Project>
       <Name>KeesTalksTech.Utilities.Evaluation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KeesTalksTech.Utilities.Latin.Numerals\KeesTalksTech.Utilities.Latin.Numerals.csproj">
+      <Project>{53683c8a-26a3-4ac4-8e3c-83ea8ac05999}</Project>
+      <Name>KeesTalksTech.Utilities.Latin.Numerals</Name>
     </ProjectReference>
     <ProjectReference Include="..\KeesTalksTech.Utilities.Rpc\KeesTalksTech.Utilities.Rpc.csproj">
       <Project>{32552CCE-11AC-4A78-92FF-683ED3E5EE96}</Project>
